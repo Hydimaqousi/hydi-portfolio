@@ -1,0 +1,26 @@
+HYDI MAQOUSI — PORTFOLIO PUBLISHING GUIDE
+
+1. Keep these files together:
+   - index.html
+   - Hydi_Maqousi_Resume.pdf
+
+2. Publish free with Netlify:
+   - Go to Netlify Drop in a browser.
+   - Drag this entire folder into the upload area.
+   - Netlify will create a public website address.
+
+3. Publish free with GitHub Pages:
+   - Create a GitHub repository.
+   - Upload index.html and Hydi_Maqousi_Resume.pdf.
+   - Open Settings > Pages.
+   - Select the main branch and root folder.
+   - Save and wait for the public website link.
+
+4. Add the published link to:
+   - LinkedIn Contact Info and Featured section
+   - Resume header
+   - Job application website field
+   - Email signature
+
+IMPORTANT:
+Do not rename Hydi_Maqousi_Resume.pdf unless you also update the resume links inside index.html.

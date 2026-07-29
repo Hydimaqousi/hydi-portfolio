@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Executive portfolio of Hydi Maqousi, a research-driven operations professional specializing in business analysis, process improvement, higher education operations, compliance, and project coordination.">
+  <meta name="author" content="Hydi Maqousi">
+  <meta name="theme-color" content="#3b2b24">
+  <meta property="og:title" content="Hydi Maqousi | Executive Operations Portfolio">
+  <meta property="og:description" content="Turning complexity into clarity through research, analysis, process improvement, and operational leadership.">
+  <meta property="og:type" content="website">
+  <title>Hydi Maqousi | Executive Operations Portfolio</title>
+
+  <style>
+    :root{
+      --espresso-950:#241a16;
+      --espresso-900:#30221d;
+      --espresso-800:#3b2b24;
+      --espresso-700:#514037;
+      --taupe-700:#75675f;
+      --taupe-500:#9a8b82;
+      --taupe-300:#c8bbb3;
+      --stone-200:#e5ddd7;
+      --stone-100:#f1ebe6;
+      --cream:#f8f5f2;
+      --paper:#fffdfb;
+      --ink:#282321;
+      --muted:#6f6661;
+      --success:#6e7f6b;
+      --shadow-sm:0 8px 24px rgba(48,34,29,.07);
+      --shadow-lg:0 24px 60px rgba(48,34,29,.13);
+      --radius-sm:14px;
+      --radius-md:22px;
+      --radius-lg:32px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth; scroll-padding-top:92px}
+    body{
+      margin:0;
+      background:var(--cream);
+      color:var(--ink);
+      font-family:Inter, "Segoe UI", Arial, sans-serif;
+      line-height:1.7;
+      text-rendering:optimizeLegibility;
+    }
+    body.menu-open{overflow:hidden}
+    a{color:inherit}
+    img{max-width:100%}
+    button,input,textarea{font:inherit}
+    .wrap{width:min(var(--max), calc(100% - 40px)); margin:auto}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(255,253,251,.90);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(200,187,179,.72);
+      transition:box-shadow .25s ease, background .25s ease;
+    }
+    .nav.scrolled{box-shadow:0 10px 30px rgba(48,34,29,.08); background:rgba(255,253,251,.97)}
+    .nav-inner{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .brand-lockup{
+      display:flex;
+      align-items:center;
+      gap:13px;
+      text-decoration:none;
+    }
+    .logo-mark{
+      width:46px;
+      height:46px;
+      border-radius:15px;
+      display:grid;
+      place-items:center;
+      color:white;
+      background:linear-gradient(145deg,var(--espresso-700),var(--espresso-950));
+      box-shadow:0 10px 25px rgba(48,34,29,.18);
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:700;
+      letter-spacing:-.08em;
+      font-size:1.23rem;
+      position:relative;
+      overflow:hidden;
+    }
+    .logo-mark::after{
+      content:"";
+      position:absolute;
+      inset:auto -10px -16px auto;
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      background:rgba(255,255,255,.10);
+    }
+    .brand-copy strong{
+      display:block;
+      letter-spacing:.12em;
+      color:var(--espresso-950);
+      font-size:.86rem;
+    }
+    .brand-copy span{
+      display:block;
+      color:var(--taupe-700);
+      font-size:.73rem;
+      margin-top:1px;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:23px;
+      font-size:.92rem;
+    }
+    .nav-links a{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:700;
+      position:relative;
+    }
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:100%;
+      bottom:-7px;
+      height:2px;
+      background:var(--espresso-700);
+      transition:right .22s ease;
+    }
+    .nav-links a:hover{color:var(--espresso-800)}
+    .nav-links a:hover::after{right:0}
+    .nav-cta{
+      padding:10px 16px;
+      border-radius:999px;
+      color:white !important;
+      background:var(--espresso-800);
+    }
+    .nav-cta::after{display:none}
+    .menu-btn{
+      display:none;
+      border:0;
+      background:transparent;
+      width:44px;height:44px;
+      border-radius:12px;
+      cursor:pointer;
+      color:var(--espresso-900);
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding:112px 0 92px;
+      background:
+        radial-gradient(circle at 79% 18%, rgba(154,139,130,.22), transparent 24%),
+        radial-gradient(circle at 12% 80%, rgba(200,187,179,.28), transparent 28%),
+        linear-gradient(145deg,#fffdfb 0%,#f1eae5 100%);
+      border-bottom:1px solid var(--stone-200);
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:420px;height:420px;
+      border-radius:50%;
+      border:1px solid rgba(81,64,55,.10);
+      top:-165px;right:-90px;
+    }
+    .hero-grid{
+      position:relative;
+      display:grid;
+      grid-template-columns:minmax(0,1.25fr) minmax(310px,.75fr);
+      gap:68px;
+      align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      text-transform:uppercase;
+      letter-spacing:.19em;
+      font-size:.75rem;
+      font-weight:900;
+      color:var(--taupe-700);
+      margin-bottom:18px;
+    }
+    .eyebrow::before{content:"";width:32px;height:1px;background:var(--taupe-500)}
+    h1,h2,.serif{font-family:Georgia, "Times New Roman", serif}
+    h1{
+      margin:0;
+      font-size:clamp(3.5rem,7vw,6.7rem);
+      line-height:.94;
+      letter-spacing:-.055em;
+      color:var(--espresso-950);
+    }
+    .role{
+      margin:24px 0 4px;
+      font-size:clamp(1.18rem,2.4vw,1.75rem);
+      font-weight:800;
+      color:var(--espresso-700);
+    }
+    .tagline{
+      margin:0 0 26px;
+      color:var(--taupe-700);
+      font-family:Georgia, "Times New Roman", serif;
+      font-style:italic;
+      font-size:1.25rem;
+    }
+    .hero-copy{max-width:760px;color:var(--muted);font-size:1.08rem}
+    .buttons{display:flex;gap:13px;flex-wrap:wrap;margin-top:32px}
+    .btn{
+      min-height:49px;
+      padding:0 22px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      text-decoration:none;
+      font-weight:850;
+      border:1px solid transparent;
+      transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--espresso-800);color:white;box-shadow:0 12px 28px rgba(59,43,36,.18)}
+    .btn-primary:hover{background:var(--espresso-950);box-shadow:0 16px 32px rgba(59,43,36,.23)}
+    .btn-secondary{border-color:var(--espresso-700);color:var(--espresso-700);background:rgba(255,255,255,.45)}
+    .btn-secondary:hover{background:var(--stone-100)}
+    .btn-light{background:white;color:var(--espresso-900)}
+    .btn-light:hover{box-shadow:0 10px 25px rgba(0,0,0,.15)}
+
+    .hero-panel{
+      border-radius:var(--radius-lg);
+      padding:35px;
+      color:white;
+      background:linear-gradient(155deg,var(--espresso-800),var(--espresso-950));
+      box-shadow:var(--shadow-lg);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-panel::after{
+      content:"HM";
+      position:absolute;
+      right:-5px;
+      bottom:-46px;
+      font:700 8rem/1 Georgia,serif;
+      color:rgba(255,255,255,.045);
+    }
+    .hero-panel h3{margin:0 0 12px;font:700 1.55rem/1.2 Georgia,serif}
+    .hero-panel p{color:#eee5df}
+    .mini-list{display:grid;gap:13px;margin-top:25px}
+    .mini-item{
+      display:flex;
+      gap:12px;
+      padding-top:13px;
+      border-top:1px solid rgba(255,255,255,.15);
+    }
+    .mini-dot{width:8px;height:8px;border-radius:50%;background:var(--taupe-300);margin-top:9px;flex:0 0 auto}
+
+    section{padding:90px 0}
+    .paper{background:var(--paper)}
+    .soft{background:var(--stone-100)}
+    .section-kicker{
+      text-transform:uppercase;
+      letter-spacing:.17em;
+      font-size:.75rem;
+      font-weight:900;
+      color:var(--taupe-700);
+      margin-bottom:10px;
+    }
+    h2{
+      margin:0 0 18px;
+      color:var(--espresso-950);
+      font-size:clamp(2.25rem,4.6vw,3.7rem);
+      line-height:1.06;
+      letter-spacing:-.025em;
+    }
+    .section-lead{max-width:800px;margin:0 0 38px;color:var(--muted);font-size:1.06rem}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .card{
+      background:var(--paper);
+      border:1px solid var(--stone-200);
+      border-radius:var(--radius-md);
+      padding:29px;
+      box-shadow:var(--shadow-sm);
+    }
+    .card h3{margin:0 0 11px;color:var(--espresso-800);font-size:1.18rem}
+    .card p:last-child{margin-bottom:0}
+    .dark-card{background:var(--espresso-950);color:white;border:0}
+    .dark-card h3{color:white}
+    .dark-card p{color:#eee5df}
+
+    .focus-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .focus-card{
+      background:var(--paper);
+      border:1px solid var(--stone-200);
+      border-radius:20px;
+      padding:25px;
+      min-height:225px;
+      transition:transform .22s ease,box-shadow .22s ease;
+    }
+    .focus-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm)}
+    .focus-number{font:700 2.2rem/1 Georgia,serif;color:var(--taupe-300);margin-bottom:16px}
+    .focus-card h3{margin:0 0 12px;color:var(--espresso-900)}
+    .focus-card ul{padding-left:18px;margin:0;color:var(--muted)}
+
+    .metrics{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+    .metric{
+      text-align:center;
+      background:var(--paper);
+      border:1px solid var(--stone-200);
+      border-radius:18px;
+      padding:25px 12px;
+    }
+    .metric strong{display:block;font:700 2.05rem/1 Georgia,serif;color:var(--espresso-700);margin-bottom:9px}
+    .metric span{font-size:.88rem;color:var(--muted)}
+
+    .timeline{position:relative;display:grid;gap:24px}
+    .timeline::before{
+      content:"";
+      position:absolute;
+      top:8px;
+      bottom:8px;
+      left:20px;
+      width:2px;
+      background:linear-gradient(var(--taupe-300),var(--stone-200));
+    }
+    .timeline-item{
+      position:relative;
+      padding-left:62px;
+    }
+    .timeline-dot{
+      position:absolute;
+      left:10px;
+      top:27px;
+      width:22px;height:22px;
+      border-radius:50%;
+      background:var(--espresso-700);
+      border:5px solid var(--stone-100);
+      box-shadow:0 0 0 1px var(--taupe-300);
+      z-index:2;
+    }
+    .role-card{
+      display:grid;
+      grid-template-columns:290px 1fr;
+      gap:30px;
+      background:var(--paper);
+      border:1px solid var(--stone-200);
+      border-radius:var(--radius-md);
+      padding:30px;
+      box-shadow:var(--shadow-sm);
+    }
+    .role-card h3{margin:0;color:var(--espresso-950);font-size:1.15rem}
+    .role-meta{color:var(--espresso-700);font-weight:850;margin-top:5px}
+    .role-date{color:var(--taupe-700);font-size:.92rem;margin-top:2px}
+    .role-card p{margin-top:0;color:var(--muted)}
+    .role-card ul{margin:0;padding-left:20px}
+    .role-card li+li{margin-top:7px}
+
+    .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .case{
+      background:var(--paper);
+      border:1px solid var(--stone-200);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:var(--shadow-sm);
+      display:flex;
+      flex-direction:column;
+    }
+    .case-top{
+      padding:25px;
+      background:linear-gradient(145deg,#e8dfd9,#f7f3ef);
+      border-bottom:1px solid var(--stone-200);
+    }
+    .case-label{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(59,43,36,.09);
+      color:var(--espresso-700);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-size:.73rem;
+      font-weight:900;
+    }
+    .case-body{padding:25px;display:flex;flex-direction:column;flex:1}
+    .case h3{margin:0 0 11px;color:var(--espresso-950);font-size:1.18rem}
+    .case h4{margin:18px 0 5px;color:var(--espresso-700);font-size:.82rem;text-transform:uppercase;letter-spacing:.09em}
+    .case p{margin:0;color:var(--muted)}
+    .case-result{
+      margin-top:auto;
+      padding-top:20px;
+    }
+    .result-box{
+      border-left:4px solid var(--success);
+      background:#f3f5f1;
+      padding:14px 15px;
+      border-radius:0 12px 12px 0;
+      color:#4e5d4b;
+      font-size:.94rem;
+    }
+
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .process-step{
+      position:relative;
+      border:1px solid var(--stone-200);
+      border-radius:18px;
+      background:var(--paper);
+      padding:27px;
+    }
+    .process-step:not(:last-child)::after{
+      content:"→";
+      position:absolute;
+      right:-15px;
+      top:50%;
+      transform:translateY(-50%);
+      color:var(--taupe-500);
+      font-size:1.6rem;
+      z-index:2;
+    }
+    .process-step b{display:block;color:var(--espresso-950);font-size:1.08rem;margin-bottom:7px}
+    .process-step span{color:var(--muted)}
+
+    .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+    .tag{
+      border:1px solid #d8cbc3;
+      background:#f3ece7;
+      color:var(--espresso-700);
+      border-radius:999px;
+      padding:7px 12px;
+      font-size:.86rem;
+      font-weight:780;
+    }
+
+    .targets{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:17px;
+    }
+    .target{
+      border:1px solid var(--stone-200);
+      border-radius:17px;
+      background:var(--paper);
+      padding:22px;
+      color:var(--espresso-800);
+      font-weight:800;
+      text-align:center;
+    }
+
+    .cta{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:30px;
+      align-items:center;
+      padding:48px;
+      color:white;
+      background:linear-gradient(145deg,var(--espresso-700),var(--espresso-950));
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow-lg);
+    }
+    .cta h2{color:white;margin-bottom:10px}
+    .cta p{max-width:740px;margin:0;color:#eee5df}
+    .contact-list{display:flex;flex-wrap:wrap;gap:16px 24px;margin-top:24px;color:#f2eae5;font-weight:750}
+
+    footer{
+      background:var(--paper);
+      border-top:1px solid var(--stone-200);
+      color:var(--muted);
+      padding:34px 0;
+      text-align:center;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .7s ease,transform .7s ease;
+    }
+    .reveal.visible{opacity:1;transform:none}
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation:none!important;transition:none!important}
+      .reveal{opacity:1;transform:none}
+    }
+
+    @media(max-width:1000px){
+      .hero-grid,.two-col,.cta{grid-template-columns:1fr}
+      .focus-grid,.process{grid-template-columns:repeat(2,1fr)}
+      .metrics{grid-template-columns:repeat(3,1fr)}
+      .case-grid,.skill-grid,.targets{grid-template-columns:1fr}
+      .role-card{grid-template-columns:1fr}
+      .process-step:not(:last-child)::after{display:none}
+    }
+    @media(max-width:780px){
+      .menu-btn{display:grid;place-items:center}
+      .nav-links{
+        display:none;
+        position:fixed;
+        inset:78px 0 auto 0;
+        background:var(--paper);
+        border-bottom:1px solid var(--stone-200);
+        padding:24px 20px 30px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:18px;
+        box-shadow:0 22px 35px rgba(48,34,29,.12);
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{font-size:1rem}
+      .focus-grid,.process,.metrics{grid-template-columns:1fr}
+      .hero{padding:78px 0 70px}
+      section{padding:72px 0}
+      .wrap{width:min(var(--max), calc(100% - 28px))}
+      .timeline::before{left:13px}
+      .timeline-item{padding-left:44px}
+      .timeline-dot{left:3px}
+      .cta{padding:34px 24px}
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav" id="topNav">
+    <div class="wrap nav-inner">
+      <a class="brand-lockup" href="#top" aria-label="Hydi Maqousi home">
+        <div class="logo-mark" aria-hidden="true">HM</div>
+        <div class="brand-copy">
+          <strong>HYDI MAQOUSI</strong>
+          <span>Turning Complexity into Clarity</span>
+        </div>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation">
+        <span aria-hidden="true">☰</span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#impact">Impact</a>
+        <a href="#learning">Development</a>
+        <a class="nav-cta" href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <div class="eyebrow">Operations • Analysis • Process Improvement</div>
+        <h1>Hydi<br>Maqousi</h1>
+        <div class="role">Research-Driven Operations Professional</div>
+        <p class="tagline">Turning Complexity into Clarity</p>
+        <p class="hero-copy">
+          I help organizations understand complex operational challenges, connect information across systems,
+          strengthen documentation, improve workflows, and support accurate, informed decision-making.
+        </p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="Hydi_Maqousi_Resume.pdf" download>Download Resume</a>
+          <a class="btn btn-secondary" href="#case-studies">View Case Studies</a>
+          <a class="btn btn-secondary" href="#contact">Contact Me</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel reveal">
+        <h3>Executive Profile</h3>
+        <p>
+          Operations-focused professional with experience across higher education, healthcare,
+          nonprofit administration, and laboratory environments.
+        </p>
+        <div class="mini-list">
+          <div class="mini-item"><span class="mini-dot"></span><span>Operational analysis and workflow improvement</span></div>
+          <div class="mini-item"><span class="mini-dot"></span><span>Business analysis and root-cause research</span></div>
+          <div class="mini-item"><span class="mini-dot"></span><span>Policy interpretation, compliance, and documentation</span></div>
+          <div class="mini-item"><span class="mini-dot"></span><span>Project coordination and cross-functional collaboration</span></div>
+          <div class="mini-item"><span class="mini-dot"></span><span>AI-assisted productivity with human validation</span></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="paper">
+      <div class="wrap">
+        <div class="section-kicker reveal">Meet Hydi</div>
+        <h2 class="reveal">Curiosity shapes how I work.</h2>
+        <p class="section-lead reveal">
+          My experience spans higher education, healthcare, nonprofit administration, and laboratory operations.
+          Across each environment, I have been trusted to research details, organize information, interpret requirements,
+          and help people and teams move forward with greater clarity.
+        </p>
+
+        <div class="two-col">
+          <article class="card reveal">
+            <h3>About Me</h3>
+            <p>
+              Whether I am researching a complex financial scenario, coordinating information across departments,
+              supporting executive reporting, or improving documentation, I begin by understanding the full picture.
+              I enjoy asking thoughtful questions, learning new systems, identifying patterns, and translating complicated information into practical next steps.
+            </p>
+          </article>
+          <article class="card dark-card reveal">
+            <h3>Professional Philosophy</h3>
+            <p>
+              I believe every complex problem becomes more manageable when the right information is connected.
+              My goal is not only to complete the work, but to improve how the work is understood, documented,
+              communicated, and delivered.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft">
+      <div class="wrap">
+        <div class="section-kicker reveal">Mission & Vision</div>
+        <h2 class="reveal">Practical solutions. Stronger systems.</h2>
+        <div class="two-col">
+          <article class="card reveal">
+            <h3>Mission</h3>
+            <p>
+              Transform complexity into clarity through thoughtful research, analytical thinking,
+              and practical solutions that strengthen operations and support informed decision-making.
+            </p>
+          </article>
+          <article class="card reveal">
+            <h3>Vision</h3>
+            <p>
+              Become a trusted leader in operations, strategy, and process improvement by creating efficient systems
+              and helping organizations solve complex challenges.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper">
+      <div class="wrap">
+        <div class="section-kicker reveal">Capabilities</div>
+        <h2 class="reveal">What I bring to an organization.</h2>
+        <div class="focus-grid">
+          <article class="focus-card reveal">
+            <div class="focus-number">01</div>
+            <h3>Operations</h3>
+            <ul>
+              <li>Process improvement</li>
+              <li>Workflow optimization</li>
+              <li>Operational documentation</li>
+              <li>Compliance support</li>
+            </ul>
+          </article>
+          <article class="focus-card reveal">
+            <div class="focus-number">02</div>
+            <h3>Research & Analysis</h3>
+            <ul>
+              <li>Business analysis</li>
+              <li>Root-cause investigation</li>
+              <li>Cross-system research</li>
+              <li>Decision support</li>
+            </ul>
+          </article>
+          <article class="focus-card reveal">
+            <div class="focus-number">03</div>
+            <h3>Collaboration</h3>
+            <ul>
+              <li>Cross-functional coordination</li>
+              <li>Stakeholder communication</li>
+              <li>Training and mentoring</li>
+              <li>Knowledge sharing</li>
+            </ul>
+          </article>
+          <article class="focus-card reveal">
+            <div class="focus-number">04</div>
+            <h3>Technology</h3>
+            <ul>
+              <li>Enterprise systems</li>
+              <li>Microsoft 365</li>
+              <li>AI-assisted productivity</li>
+              <li>Data and reporting tools</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact" class="soft">
+      <div class="wrap">
+        <div class="section-kicker reveal">Evidence of Impact</div>
+        <h2 class="reveal">Experience supported by measurable work.</h2>
+        <div class="metrics">
+          <div class="metric reveal"><strong>3,000+</strong><span>Complex cases completed</span></div>
+          <div class="metric reveal"><strong>146</strong><span>Five-star surveys</span></div>
+          <div class="metric reveal"><strong>692</strong><span>Financial engagements</span></div>
+          <div class="metric reveal"><strong>5,000+</strong><span>Sponsorship records</span></div>
+          <div class="metric reveal"><strong>4</strong><span>Industries supported</span></div>
+          <div class="metric reveal"><strong>2</strong><span>Languages spoken</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="paper">
+      <div class="wrap">
+        <div class="section-kicker reveal">Career Timeline</div>
+        <h2 class="reveal">Experience across complex operating environments.</h2>
+        <p class="section-lead reveal">
+          My career has developed through roles that require accuracy, sound judgment, policy interpretation,
+          strong documentation, service awareness, and the ability to coordinate information across people and systems.
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <article class="role-card">
+              <div>
+                <h3>University of Maryland Global Campus</h3>
+                <div class="role-meta">Financial Solution Advisor</div>
+                <div class="role-date">January 2024 – Present</div>
+              </div>
+              <div>
+                <p>
+                  Research and resolve complex student financial scenarios involving financial aid, billing,
+                  military education benefits, employer tuition assistance, payment planning, and account discrepancies.
+                </p>
+                <ul>
+                  <li>Analyze information across Salesforce, Workday, PeopleSoft, OnBase, Verint, Five9, and related systems.</li>
+                  <li>Interpret institutional procedures and federal requirements to support accurate, compliant decisions.</li>
+                  <li>Coordinate with Financial Aid, Registrar, Advising, Student Accounts, Admissions, and Military Education.</li>
+                  <li>Manage high-volume casework while maintaining documentation quality, accuracy, and service standards.</li>
+                  <li>Train newly hired advisors, share operational knowledge, and contribute workflow recommendations.</li>
+                  <li>Support policy and process updates, including FAFSA Simplification initiatives.</li>
+                  <li>Use AI-assisted tools responsibly for research, organization, and communication while validating outputs.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <article class="role-card">
+              <div>
+                <h3>Saxon Internal Medicine</h3>
+                <div class="role-meta">Medical Receptionist</div>
+                <div class="role-date">October 2023 – January 2024</div>
+              </div>
+              <div>
+                <p>
+                  Coordinated front-office operations in a high-volume clinical environment serving approximately 50 patients daily.
+                </p>
+                <ul>
+                  <li>Managed scheduling, provider calendars, insurance verification, payments, registration, and electronic medical records.</li>
+                  <li>Maintained documentation accuracy, confidentiality, and communication across patients and clinical staff.</li>
+                  <li>Used eClinicalWorks to support organized records and reliable patient workflows.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <article class="role-card">
+              <div>
+                <h3>Helping Hand for Relief and Development</h3>
+                <div class="role-meta">Volunteer Executive Assistant</div>
+                <div class="role-date">February 2023 – October 2023</div>
+              </div>
+              <div>
+                <p>
+                  Supported executive leadership through reporting, administrative coordination,
+                  international logistics, project support, and Arabic-English translation.
+                </p>
+                <ul>
+                  <li>Managed documentation and tracking related to more than 5,000 orphan sponsorship records.</li>
+                  <li>Prepared reports, spreadsheets, and organized information to support leadership decision-making.</li>
+                  <li>Coordinated international humanitarian team logistics and professional communications.</li>
+                  <li>Helped maintain continuity and administrative coverage during a maternity-leave assignment.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <article class="role-card">
+              <div>
+                <h3>DaVita Laboratories</h3>
+                <div class="role-meta">Clinical Support I</div>
+                <div class="role-date">January 2022 – August 2022</div>
+              </div>
+              <div>
+                <p>
+                  Supported quality laboratory operations through specimen processing, documentation review,
+                  workflow coordination, and compliance with regulated procedures.
+                </p>
+                <ul>
+                  <li>Verified labeling, documentation, and chain-of-custody requirements.</li>
+                  <li>Coordinated specimen routing and helped resolve documentation issues.</li>
+                  <li>Maintained accuracy and quality standards in a regulated healthcare environment.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="case-studies" class="soft">
+      <div class="wrap">
+        <div class="section-kicker reveal">Selected Case Studies</div>
+        <h2 class="reveal">How I approach real operational challenges.</h2>
+        <p class="section-lead reveal">
+          These examples are intentionally generalized to protect confidential information while showing how I research,
+          organize, communicate, and resolve complex work.
+        </p>
+
+        <div class="case-grid">
+          <article class="case reveal">
+            <div class="case-top"><span class="case-label">Higher Education Operations</span></div>
+            <div class="case-body">
+              <h3>Resolving a Multi-System Student Account Issue</h3>
+              <h4>Situation</h4>
+              <p>A student account contained conflicting financial aid, billing, and documentation information across multiple systems.</p>
+              <h4>Analysis</h4>
+              <p>I reviewed the full account history, compared system records, checked policy requirements, and separated the primary issue from secondary account effects.</p>
+              <h4>Action</h4>
+              <p>I identified missing information, documented findings clearly, coordinated with the responsible departments, and communicated a realistic sequence of next steps.</p>
+              <div class="case-result">
+                <div class="result-box"><strong>Result:</strong> A clearer resolution path, stronger documentation continuity, and reduced risk of repeated or conflicting guidance.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case-top"><span class="case-label">Process Improvement</span></div>
+            <div class="case-body">
+              <h3>Strengthening Workflow Consistency</h3>
+              <h4>Situation</h4>
+              <p>Recurring questions and process changes created opportunities for inconsistent handling and longer resolution time.</p>
+              <h4>Analysis</h4>
+              <p>I observed repeated issues, grouped common problem patterns, and reviewed the documentation and system steps that advisors needed most often.</p>
+              <h4>Action</h4>
+              <p>I clarified practical steps, shared operational knowledge, supported newly hired advisors, and offered recommendations for stronger workflow consistency.</p>
+              <div class="case-result">
+                <div class="result-box"><strong>Result:</strong> Easier onboarding, clearer handling of repeat scenarios, stronger knowledge sharing, and better process continuity.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case-top"><span class="case-label">Humanitarian Administration</span></div>
+            <div class="case-body">
+              <h3>Organizing High-Volume Sponsorship Records</h3>
+              <h4>Situation</h4>
+              <p>Thousands of sponsorship records required organized tracking, reporting, reliable communication, and coordination across international work.</p>
+              <h4>Analysis</h4>
+              <p>I reviewed information needs, reporting expectations, language requirements, and the operational importance of consistent records.</p>
+              <h4>Action</h4>
+              <p>I maintained structured spreadsheets and reports, supported executive information needs, coordinated logistics, and translated communications between Arabic and English.</p>
+              <div class="case-result">
+                <div class="result-box"><strong>Result:</strong> Better access to organized information and more reliable coordination across leadership and humanitarian teams.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case-top"><span class="case-label">Compliance & Documentation</span></div>
+            <div class="case-body">
+              <h3>Improving Documentation Quality</h3>
+              <h4>Situation</h4>
+              <p>Complex cases required clear documentation so that other teams could understand prior research, decisions, and pending actions.</p>
+              <h4>Analysis</h4>
+              <p>I considered what information another employee would need to continue the work accurately without repeating the same investigation.</p>
+              <h4>Action</h4>
+              <p>I organized case notes around the issue, evidence reviewed, policy considered, action taken, and next responsible step.</p>
+              <div class="case-result">
+                <div class="result-box"><strong>Result:</strong> Stronger case continuity, clearer internal communication, and improved support for compliance and follow-through.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case-top"><span class="case-label">Training & Knowledge Sharing</span></div>
+            <div class="case-body">
+              <h3>Supporting New Advisor Readiness</h3>
+              <h4>Situation</h4>
+              <p>New advisors needed to understand multiple systems, policies, and decision paths while beginning high-volume work.</p>
+              <h4>Analysis</h4>
+              <p>I identified frequent learning gaps and the areas where examples, explanations, and system context were most useful.</p>
+              <h4>Action</h4>
+              <p>I explained processes, answered questions, shared practical examples, and reinforced the importance of complete research and documentation.</p>
+              <div class="case-result">
+                <div class="result-box"><strong>Result:</strong> Stronger confidence, improved knowledge transfer, and more consistent preparation for independent case handling.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case-top"><span class="case-label">Healthcare Operations</span></div>
+            <div class="case-body">
+              <h3>Balancing Accuracy in a High-Volume Clinic</h3>
+              <h4>Situation</h4>
+              <p>A busy medical office required rapid coordination of schedules, insurance, records, payments, and patient communication.</p>
+              <h4>Analysis</h4>
+              <p>I prioritized time-sensitive needs while tracking documentation and communication requirements that affected the patient and provider workflow.</p>
+              <h4>Action</h4>
+              <p>I maintained organized records, coordinated appointments and verification, and communicated clearly across patients and clinical staff.</p>
+              <div class="case-result">
+                <div class="result-box"><strong>Result:</strong> Reliable front-office support, accurate documentation, and smoother coordination in a fast-paced environment.</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper">
+      <div class="wrap">
+        <div class="section-kicker reveal">My Approach</div>
+        <h2 class="reveal">A repeatable process for complex work.</h2>
+        <div class="process">
+          <div class="process-step reveal"><b>Research</b><span>Understand the problem, context, requirements, and available information.</span></div>
+          <div class="process-step reveal"><b>Analyze</b><span>Connect data, systems, policies, documentation, and root causes.</span></div>
+          <div class="process-step reveal"><b>Collaborate</b><span>Engage the right stakeholders and communicate findings clearly.</span></div>
+          <div class="process-step reveal"><b>Improve</b><span>Develop practical solutions that strengthen the process going forward.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="learning" class="soft">
+      <div class="wrap">
+        <div class="section-kicker reveal">Technology & Development</div>
+        <h2 class="reveal">Systems knowledge supported by continuous learning.</h2>
+
+        <div class="skill-grid">
+          <article class="card reveal">
+            <h3>Enterprise Systems</h3>
+            <div class="tags">
+              <span class="tag">Salesforce</span><span class="tag">Workday</span><span class="tag">PeopleSoft</span>
+              <span class="tag">OnBase</span><span class="tag">Verint</span><span class="tag">Five9</span>
+            </div>
+          </article>
+          <article class="card reveal">
+            <h3>Microsoft & Healthcare</h3>
+            <div class="tags">
+              <span class="tag">Excel</span><span class="tag">Word</span><span class="tag">Outlook</span>
+              <span class="tag">Teams</span><span class="tag">PowerPoint</span><span class="tag">SharePoint</span>
+              <span class="tag">eClinicalWorks</span>
+            </div>
+          </article>
+          <article class="card reveal">
+            <h3>Professional Development</h3>
+            <div class="tags">
+              <span class="tag">Google Project Management</span><span class="tag">SQL</span>
+              <span class="tag">Power BI</span><span class="tag">Artificial Intelligence</span>
+              <span class="tag">Business Analysis</span><span class="tag">Data Analytics</span>
+              <span class="tag">Process Improvement</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="two-col" style="margin-top:20px">
+          <article class="card reveal">
+            <h3>Education</h3>
+            <p><strong>Bachelor of Science in Laboratory Management</strong><br>University of Maryland Global Campus<br>Graduated May 2023</p>
+          </article>
+          <article class="card reveal">
+            <h3>AI-Assisted Productivity</h3>
+            <p>
+              I use AI tools to support research, organize information, improve documentation,
+              plan workflows, and refine communication. I review and validate outputs to protect accuracy,
+              confidentiality, and professional judgment.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper">
+      <div class="wrap">
+        <div class="section-kicker reveal">Target Opportunities</div>
+        <h2 class="reveal">Where my experience creates the strongest value.</h2>
+        <div class="targets">
+          <div class="target reveal">Operations & Business Operations</div>
+          <div class="target reveal">Business Analysis</div>
+          <div class="target reveal">Project & Program Coordination</div>
+          <div class="target reveal">Higher Education Administration</div>
+          <div class="target reveal">Process Improvement</div>
+          <div class="target reveal">Compliance & Operational Support</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="paper">
+      <div class="wrap">
+        <div class="cta reveal">
+          <div>
+            <div class="section-kicker" style="color:#cdbeb4">Let's Connect</div>
+            <h2>Ready to bring clarity to complex operations.</h2>
+            <p>
+              I am interested in opportunities involving operations, business analysis, project coordination,
+              process improvement, higher education administration, compliance, program support, and organizational strategy.
+            </p>
+            <div class="contact-list">
+              <span>hydimaqousi21@gmail.com</span>
+              <span>321-263-1073</span>
+              <span>Greater New Orleans, LA</span>
+              <span>Remote | Open to Relocation</span>
+            </div>
+          </div>
+          <div class="buttons">
+            <a class="btn btn-light" href="mailto:hydimaqousi21@gmail.com?subject=Professional%20Opportunity%20for%20Hydi%20Maqousi">Email Me</a>
+            <a class="btn btn-light" href="Hydi_Maqousi_Resume.pdf" download>Download Resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="logo-mark" style="margin:0 auto 14px">HM</div>
+      Turning Complexity into Clarity © Hydi Maqousi
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('topNav');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+      document.body.classList.toggle('menu-open', isOpen);
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
