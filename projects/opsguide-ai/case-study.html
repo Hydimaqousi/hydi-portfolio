@@ -50,6 +50,40 @@ footer{padding:30px 0;text-align:center;color:#756d67;font-size:.75rem;border-to
   .prototype-note{margin-top:18px;padding:16px 18px;border-left:4px solid var(--teal);background:#f2fbfc;border-radius:10px;color:var(--muted)}
   @media(max-width:900px){.architecture{grid-template-columns:repeat(2,1fr)}.build-grid{grid-template-columns:1fr}}
   @media(max-width:560px){.architecture{grid-template-columns:1fr}}
+
+  @media(max-width:700px){
+    .tablewrap{overflow:visible;border:0;background:transparent}
+    .tablewrap table,.tablewrap tbody,.tablewrap tr,.tablewrap td{display:block;width:100%}
+    .tablewrap thead{display:none}
+    .tablewrap tr{
+      margin:0 0 16px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+      overflow:hidden;
+      box-shadow:0 8px 22px rgba(18,38,75,.05);
+    }
+    .tablewrap td{
+      border:0 !important;
+      border-bottom:1px solid var(--line) !important;
+      padding:14px 16px !important;
+      font-size:.92rem !important;
+      line-height:1.55 !important;
+      text-align:left !important;
+      overflow-wrap:anywhere;
+      white-space:normal !important;
+    }
+    .tablewrap td:last-child{border-bottom:0 !important}
+    #requirements .tablewrap td:nth-child(1)::before{content:"ID";display:block;font-size:.68rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    #requirements .tablewrap td:nth-child(2)::before{content:"Requirement";display:block;font-size:.68rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    #requirements .tablewrap td:nth-child(3)::before{content:"Acceptance Criteria";display:block;font-size:.68rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    #testing .tablewrap td:nth-child(1)::before{content:"Scenario";display:block;font-size:.68rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    #testing .tablewrap td:nth-child(2)::before{content:"User Prompt";display:block;font-size:.68rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    #testing .tablewrap td:nth-child(3)::before{content:"Expected Product Behavior";display:block;font-size:.68rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    #testing .tablewrap td:nth-child(4)::before{content:"Pass Condition";display:block;font-size:.68rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    .hero h1{font-size:clamp(2.5rem,13vw,4rem);line-height:.98}
+  }
+
 </style>
 </head>
 <body>
@@ -67,7 +101,7 @@ footer{padding:30px 0;text-align:center;color:#756d67;font-size:.75rem;border-to
   <aside class="snapshot">
    <h3>Product Snapshot</h3>
    <dl>
-    <dt>Role</dt><dd>Product Owner / Product Manager</dd>
+    <dt>Role</dt><dd>Concept Creator · Product & Project Lead</dd>
     <dt>Status</dt><dd>Interactive Prototype — v0.5</dd>
     <dt>Users</dt><dd>Financial Solutions Advisors, Financial Aid Advisors, trainers, knowledge owners</dd>
     <dt>Initial domain</dt><dd>Higher education financial operations</dd>
