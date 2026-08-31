@@ -198,6 +198,54 @@ h1 span{background:linear-gradient(90deg,var(--indigo),var(--cyan));-webkit-back
   .section-head{display:block}
   .section-head p{margin-top:8px}
 }
+
+@media(max-width:620px){
+  html,body{max-width:100%;overflow-x:hidden}
+  .app,.main,.page,.hero,.workspace,.search-shell{max-width:100%;min-width:0}
+  .hero,.workspace,.section,.disclaimer{padding-left:16px;padding-right:16px}
+  .hero{padding-top:34px}
+  .hero-art{width:100%;min-width:0;overflow:hidden}
+  .node{max-width:42vw;min-width:0;padding:10px 11px}
+  .node strong,.node small{white-space:normal;overflow-wrap:anywhere}
+  .search-shell{padding:18px 14px}
+  .search-title{min-width:0}
+  .source-badge{
+    display:flex;
+    width:100%;
+    max-width:100%;
+    white-space:normal;
+    overflow-wrap:anywhere;
+    line-height:1.35;
+    border-radius:13px;
+    padding:9px 10px;
+    margin-top:12px;
+  }
+  .prompt-box{
+    width:100%;
+    min-width:0;
+    padding:8px 8px 8px 12px;
+  }
+  .prompt-box input{
+    width:100%;
+    min-width:0;
+    font-size:.9rem;
+    text-overflow:ellipsis;
+  }
+  .ask-btn{flex:0 0 52px;width:52px;height:48px;padding:0;justify-content:center}
+  .chips{width:100%;display:grid;grid-template-columns:1fr;gap:9px}
+  .chip{
+    width:100%;
+    white-space:normal;
+    line-height:1.35;
+    text-align:center;
+    overflow-wrap:anywhere;
+    padding:10px 12px;
+  }
+  .answer-head{align-items:flex-start;flex-direction:column}
+  .answer-head .source-badge{width:auto;max-width:100%;margin-top:4px}
+  .sources{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
@@ -207,7 +255,7 @@ h1 span{background:linear-gradient(90deg,var(--indigo),var(--cyan));-webkit-back
       <div class="logo" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none"><path d="M6 7.5 12 4l6 3.5v7L12 18l-6-3.5v-7Z" stroke="currentColor" stroke-width="1.7"/><path d="m9 10 3-1.8 3 1.8v3.4l-3 1.8-3-1.8V10Z" fill="currentColor"/></svg>
       </div>
-      <div><strong>OpsGuide AI</strong><small>Knowledge & Workflow Assistant</small></div>
+      <div><strong>OpsGuide AI</strong><small>Source-Grounded Decision Support</small></div>
     </div>
     <nav class="nav">
       <button class="active" data-page="assistant">
@@ -262,10 +310,10 @@ h1 span{background:linear-gradient(90deg,var(--indigo),var(--cyan));-webkit-back
               <h2>What can I help you find?</h2>
               <p>Ask a financial-aid, loan-limit, enrollment, withdrawal, military-benefit, or certification question.</p>
             </div>
-            <div class="source-badge">Demo knowledge set: Federal Student Aid + UMGC public resources</div>
+            <div class="source-badge">Demo sources: Federal Student Aid + UMGC public resources</div>
           </div>
           <div class="prompt-box">
-            <input id="prompt" aria-label="Ask OpsGuide" placeholder="Example: Independent undergrad, 60+ credits — what is the annual Direct Loan limit?">
+            <input id="prompt" aria-label="Ask OpsGuide" placeholder="Ask a financial-aid or policy question...">
             <button class="ask-btn" id="askBtn"><span>Ask OpsGuide</span> →</button>
           </div>
           <div class="chips">
