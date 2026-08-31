@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="OpsGuide AI — Independent portfolio prototype for AI-assisted operational knowledge retrieval.">
+<title>OpsGuide AI | Interactive Product Prototype</title>
+<style>
+:root{
+  --bg:#f6f8fb;
+  --surface:#ffffff;
+  --surface2:#f0f4f9;
+  --ink:#172033;
+  --muted:#657187;
+  --line:#dce3ed;
+  --navy:#172a4f;
+  --navy2:#233d70;
+  --indigo:#5b5be8;
+  --cyan:#2ea7b8;
+  --teal:#178f85;
+  --green:#13795b;
+  --amber:#a86400;
+  --danger:#b43b4b;
+  --shadow:0 18px 46px rgba(23,42,79,.10);
+  --soft-shadow:0 8px 24px rgba(23,42,79,.07);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input{font:inherit}
+a{color:inherit}
+.app{min-height:100vh;display:grid;grid-template-columns:248px 1fr}
+.sidebar{
+  position:sticky;top:0;height:100vh;padding:22px 16px;background:
+    radial-gradient(circle at 0 0,rgba(91,91,232,.24),transparent 36%),
+    linear-gradient(180deg,#142747 0%,#10213d 100%);
+  color:#fff;display:flex;flex-direction:column;gap:24px
+}
+.brand{display:flex;align-items:center;gap:11px;padding:4px 8px}
+.logo{width:40px;height:40px;border-radius:13px;background:linear-gradient(135deg,#7d72ff,#35bdc5);display:grid;place-items:center;box-shadow:0 10px 30px rgba(63,193,200,.22)}
+.logo svg{width:23px;height:23px}
+.brand strong{font-size:1.05rem;letter-spacing:.01em}
+.brand small{display:block;color:#b9c6da;margin-top:2px;font-size:.72rem}
+.nav{display:flex;flex-direction:column;gap:7px}
+.nav button{
+  border:0;background:transparent;color:#c9d4e5;padding:11px 12px;border-radius:11px;
+  display:flex;align-items:center;gap:10px;text-align:left;cursor:pointer
+}
+.nav button:hover,.nav button.active{background:rgba(255,255,255,.10);color:#fff}
+.nav svg{width:18px;height:18px}
+.side-card{
+  margin-top:auto;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.10);
+  border-radius:15px;padding:14px
+}
+.side-card strong{font-size:.82rem}
+.side-card p{font-size:.72rem;line-height:1.45;color:#c6d0df;margin:7px 0 0}
+.main{min-width:0}
+.topbar{
+  height:72px;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;
+  padding:0 30px;position:sticky;top:0;z-index:20
+}
+.topbar-left{display:flex;align-items:center;gap:12px}
+.mobile-menu{display:none;border:1px solid var(--line);background:white;border-radius:10px;padding:8px}
+.status{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;color:var(--green);background:#ecf8f2;border:1px solid #cfeade;border-radius:999px;padding:7px 10px}
+.status:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green)}
+.profile{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:.82rem}
+.avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#dfe4ff,#c8f2ef);display:grid;place-items:center;color:var(--navy);font-weight:800}
+.page{display:none}
+.page.active{display:block}
+.hero{
+  max-width:1160px;margin:0 auto;padding:68px 34px 44px;display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center
+}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--indigo);font-size:.78rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+.eyebrow:before{content:"";width:26px;height:2px;background:linear-gradient(90deg,var(--indigo),var(--cyan))}
+h1{font-size:clamp(2.5rem,5vw,4.8rem);line-height:.98;letter-spacing:-.05em;margin:18px 0 22px;max-width:760px}
+h1 span{background:linear-gradient(90deg,var(--indigo),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:1.05rem;line-height:1.75;color:var(--muted);max-width:690px}
+.hero-art{
+  position:relative;min-height:340px;border-radius:34px;background:
+    radial-gradient(circle at 73% 22%,rgba(46,167,184,.25),transparent 26%),
+    radial-gradient(circle at 26% 73%,rgba(91,91,232,.26),transparent 31%),
+    linear-gradient(145deg,#182b52,#223d72);
+  box-shadow:var(--shadow);overflow:hidden
+}
+.orb{position:absolute;border:1px solid rgba(255,255,255,.18);border-radius:50%}
+.orb.one{width:245px;height:245px;right:-55px;top:-42px}
+.orb.two{width:200px;height:200px;left:-32px;bottom:-61px}
+.node{position:absolute;background:rgba(255,255,255,.94);box-shadow:0 14px 30px rgba(0,0,0,.15);border-radius:15px;padding:12px 14px;min-width:145px}
+.node strong{display:block;font-size:.78rem}
+.node small{color:var(--muted);font-size:.68rem}
+.node.n1{top:60px;left:38px}
+.node.n2{top:151px;right:34px}
+.node.n3{bottom:45px;left:65px}
+.flowline{position:absolute;height:2px;background:linear-gradient(90deg,rgba(255,255,255,.1),#64d4d1,rgba(255,255,255,.1));transform-origin:left center}
+.f1{width:180px;left:145px;top:117px;transform:rotate(18deg)}
+.f2{width:170px;left:160px;top:236px;transform:rotate(-18deg)}
+.ai-core{position:absolute;inset:0;display:grid;place-items:center}
+.ai-core div{width:105px;height:105px;border-radius:31px;background:linear-gradient(135deg,#7c74ff,#38c7c2);display:grid;place-items:center;color:#fff;font-size:1.45rem;font-weight:900;box-shadow:0 18px 50px rgba(55,205,198,.22)}
+.workspace{max-width:1160px;margin:0 auto;padding:0 34px 70px}
+.search-shell{
+  background:var(--surface);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:22px
+}
+.search-title{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:18px}
+.search-title h2{margin:0;font-size:1.18rem}
+.search-title p{margin:5px 0 0;color:var(--muted);font-size:.84rem}
+.source-badge{font-size:.72rem;padding:7px 10px;background:#f0f2ff;color:#4f50c6;border:1px solid #dde0ff;border-radius:999px;white-space:nowrap}
+.prompt-box{display:flex;gap:10px;border:1px solid #cad4e2;background:#fbfcfe;border-radius:16px;padding:9px 9px 9px 16px;box-shadow:inset 0 1px 0 #fff}
+.prompt-box:focus-within{border-color:#8e93ef;box-shadow:0 0 0 4px rgba(91,91,232,.09)}
+.prompt-box input{flex:1;border:0;background:transparent;outline:none;color:var(--ink);min-width:0;font-size:.97rem}
+.ask-btn{border:0;border-radius:12px;background:linear-gradient(135deg,var(--indigo),#476dcc);color:#fff;padding:11px 16px;font-weight:800;cursor:pointer;display:flex;gap:7px;align-items:center}
+.ask-btn:hover{filter:brightness(.98)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
+.chip{border:1px solid var(--line);background:#fff;color:#4d5b71;border-radius:999px;padding:8px 11px;font-size:.76rem;cursor:pointer}
+.chip:hover{border-color:#a7adee;color:#4848c2;background:#f7f7ff}
+.answer-area{margin-top:18px;display:none}
+.answer-area.show{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:.3;transform:translateY(6px)}to{opacity:1;transform:none}}
+.answer-card{border:1px solid var(--line);border-radius:18px;background:#fff;overflow:hidden}
+.answer-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.answer-type{display:flex;align-items:center;gap:9px;font-weight:800;font-size:.9rem}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px #e8f5ef}
+.answer-body{padding:21px 20px}
+.answer-body h3{font-size:1rem;margin:0 0 10px}
+.answer-body p{color:#43516a;line-height:1.7;margin:0 0 12px}
+.callout{background:#f7f8ff;border:1px solid #e2e3ff;border-left:4px solid var(--indigo);border-radius:12px;padding:13px 15px;color:#38445b;font-size:.84rem;line-height:1.55;margin:15px 0}
+.domain-row{display:flex;flex-wrap:wrap;gap:7px;margin:13px 0}
+.domain{font-size:.73rem;border-radius:999px;padding:6px 9px;background:#eef5fb;color:#355c78;border:1px solid #d7e6f1}
+.sources{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:17px}
+.source-card{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fbfcfe}
+.source-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.source-icon{width:34px;height:34px;border-radius:10px;background:#eaf0ff;color:#4e5bd5;display:grid;place-items:center;font-weight:900;flex:none}
+.source-card h4{font-size:.82rem;margin:0 0 4px}
+.source-card p{font-size:.72rem;line-height:1.45;color:var(--muted);margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+.meta span{font-size:.67rem;background:#f1f4f8;color:#68758a;border-radius:7px;padding:5px 6px}
+.source-card a{display:inline-block;margin-top:10px;color:#4d55cf;text-decoration:none;font-size:.74rem;font-weight:800}
+.feedback{border-top:1px solid var(--line);padding:13px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--muted);font-size:.75rem}
+.feedback-btns{display:flex;gap:7px}
+.feedback button{border:1px solid var(--line);background:white;border-radius:9px;padding:6px 9px;cursor:pointer}
+.feedback button.selected{background:#eef3ff;border-color:#bcc4f1}
+.section{max-width:1160px;margin:0 auto;padding:52px 34px 80px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:22px}
+.section-head h2{font-size:2rem;letter-spacing:-.035em;margin:0}
+.section-head p{max-width:580px;color:var(--muted);line-height:1.6;font-size:.9rem;margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.kcard{background:white;border:1px solid var(--line);border-radius:18px;padding:19px;box-shadow:var(--soft-shadow)}
+.kcard .kicon{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#eef0ff,#e6f9f7);display:grid;place-items:center;color:var(--navy);font-weight:900;margin-bottom:14px}
+.kcard h3{font-size:.98rem;margin:0 0 8px}
+.kcard p{font-size:.79rem;line-height:1.55;color:var(--muted);margin:0}
+.kcard .tiny{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}
+.tiny span{font-size:.66rem;border-radius:7px;padding:5px 7px;background:#f1f4f8;color:#617087}
+.kcard a{display:inline-block;margin-top:14px;color:#5056cc;font-size:.74rem;text-decoration:none;font-weight:800}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px}
+.stat strong{display:block;font-size:1.6rem;letter-spacing:-.04em}
+.stat span{font-size:.73rem;color:var(--muted)}
+.info-panel{background:linear-gradient(135deg,#172a4f,#264578);color:white;border-radius:24px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.info-panel h3{font-size:1.5rem;margin:0 0 10px}
+.info-panel p{color:#cfdaeb;font-size:.84rem;line-height:1.65}
+.checklist{display:grid;gap:9px}
+.check{display:flex;gap:9px;align-items:flex-start;color:#e8eef7;font-size:.8rem}
+.check:before{content:"✓";display:grid;place-items:center;flex:none;width:20px;height:20px;border-radius:7px;background:rgba(69,211,190,.16);color:#74e0ce;font-weight:900}
+.disclaimer{
+  max-width:1160px;margin:0 auto 60px;padding:0 34px
+}
+.disclaimer div{border:1px solid #e8d9bd;background:#fffaf0;border-radius:14px;padding:14px 16px;color:#795c2a;font-size:.76rem;line-height:1.55}
+.footer{border-top:1px solid var(--line);padding:24px 34px;color:var(--muted);font-size:.72rem;text-align:center}
+.loader{display:none;padding:30px;text-align:center;color:var(--muted)}
+.loader.show{display:block}
+.spinner{width:25px;height:25px;border-radius:50%;border:3px solid #e2e6f0;border-top-color:var(--indigo);animation:spin .7s linear infinite;margin:0 auto 9px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.empty{padding:22px;border:1px dashed #cbd4df;border-radius:15px;background:#fbfcfd;color:var(--muted);font-size:.82rem}
+@media(max-width:900px){
+  .app{grid-template-columns:1fr}
+  .sidebar{position:fixed;left:-260px;z-index:50;width:248px;transition:.2s}
+  .sidebar.open{left:0}
+  .mobile-menu{display:block}
+  .hero{grid-template-columns:1fr;padding-top:42px}
+  .hero-art{min-height:285px}
+  .grid{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  .topbar{padding:0 16px}
+  .profile span{display:none}
+  .hero,.workspace,.section,.disclaimer{padding-left:18px;padding-right:18px}
+  .hero{gap:28px}
+  h1{font-size:2.7rem}
+  .hero-art{min-height:250px}
+  .node{transform:scale(.86)}
+  .sources,.grid,.info-panel{grid-template-columns:1fr}
+  .search-title{display:block}
+  .source-badge{display:inline-flex;margin-top:10px}
+  .prompt-box{align-items:center}
+  .ask-btn span{display:none}
+  .section-head{display:block}
+  .section-head p{margin-top:8px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 7.5 12 4l6 3.5v7L12 18l-6-3.5v-7Z" stroke="currentColor" stroke-width="1.7"/><path d="m9 10 3-1.8 3 1.8v3.4l-3 1.8-3-1.8V10Z" fill="currentColor"/></svg>
+      </div>
+      <div><strong>OpsGuide AI</strong><small>Knowledge & Workflow Assistant</small></div>
+    </div>
+    <nav class="nav">
+      <button class="active" data-page="assistant">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5h16v11H8l-4 3v-14Z" stroke="currentColor" stroke-width="1.7"/></svg>
+        Ask OpsGuide
+      </button>
+      <button data-page="knowledge">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4Z" stroke="currentColor" stroke-width="1.7"/><path d="M8 8h8M8 12h8" stroke="currentColor" stroke-width="1.7"/></svg>
+        Knowledge Library
+      </button>
+      <button data-page="governance">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 5 6v5c0 4.5 2.8 7.8 7 10 4.2-2.2 7-5.5 7-10V6l-7-3Z" stroke="currentColor" stroke-width="1.7"/></svg>
+        AI Governance
+      </button>
+    </nav>
+    <div class="side-card">
+      <strong>Portfolio Prototype</strong>
+      <p>Independent concept project demonstrating product management, knowledge architecture, responsible AI, UX, and business analysis.</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+        <span class="status">Approved sources only</span>
+      </div>
+      <div class="profile"><span>Prototype workspace</span><div class="avatar">HM</div></div>
+    </header>
+
+    <section class="page active" id="page-assistant">
+      <div class="hero">
+        <div>
+          <div class="eyebrow">Enterprise Knowledge Experience</div>
+          <h1>Ask once. <span>Verify fast.</span> Work with confidence.</h1>
+          <p>OpsGuide AI helps frontline teams locate concise, source-grounded operational guidance without manually searching across scattered policies, job aids, presentations, FAQs, and training resources.</p>
+        </div>
+        <div class="hero-art" aria-label="Conceptual knowledge flow visualization">
+          <div class="orb one"></div><div class="orb two"></div>
+          <div class="flowline f1"></div><div class="flowline f2"></div>
+          <div class="node n1"><strong>Policy Library</strong><small>Current approved guidance</small></div>
+          <div class="node n2"><strong>Workflow Guidance</strong><small>Steps & decision support</small></div>
+          <div class="node n3"><strong>Source Verification</strong><small>Traceable evidence</small></div>
+          <div class="ai-core"><div>AI</div></div>
+        </div>
+      </div>
+
+      <div class="workspace">
+        <div class="search-shell">
+          <div class="search-title">
+            <div>
+              <h2>What can I help you find?</h2>
+              <p>Ask a policy, process, benefits, certification, or withdrawal question.</p>
+            </div>
+            <div class="source-badge">Demo knowledge set: UMGC public resources</div>
+          </div>
+          <div class="prompt-box">
+            <input id="prompt" aria-label="Ask OpsGuide" placeholder="Example: What happens to financial aid when a student withdraws?">
+            <button class="ask-btn" id="askBtn"><span>Ask OpsGuide</span> →</button>
+          </div>
+          <div class="chips">
+            <button class="chip">What happens to federal financial aid if a student withdraws?</button>
+            <button class="chip">How does a student request VA certification?</button>
+            <button class="chip">What happens to Military TA if a student withdraws before 60%?</button>
+            <button class="chip">My student wants to withdraw. What areas should I review?</button>
+            <button class="chip">What is the policy for a parking permit?</button>
+          </div>
+          <div class="loader" id="loader"><div class="spinner"></div>Searching approved resources and validating evidence…</div>
+          <div class="answer-area" id="answerArea"></div>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><strong>6</strong><span>Approved public sources indexed</span></div>
+          <div class="stat"><strong>4</strong><span>Operational domains in MVP</span></div>
+          <div class="stat"><strong>100%</strong><span>Target citation coverage</span></div>
+          <div class="stat"><strong>&lt;30s</strong><span>Target employee retrieval time</span></div>
+        </div>
+      </div>
+
+      <div class="disclaimer"><div><strong>Independent portfolio prototype.</strong> This project uses publicly available UMGC information for demonstration. It was not developed for, endorsed by, or affiliated with UMGC. No proprietary internal documentation, student records, or personally identifiable student information is used. Users should verify current policy directly with the authoritative source.</div></div>
+    </section>
+
+    <section class="page" id="page-knowledge">
+      <div class="section">
+        <div class="section-head">
+          <div><div class="eyebrow">Knowledge Architecture</div><h2>Approved Source Library</h2></div>
+          <p>The MVP separates authoritative policies from supporting FAQs and help content, preserves source metadata, and routes every answer back to verifiable evidence.</p>
+        </div>
+        <div class="grid">
+          <article class="kcard">
+            <div class="kicon">R2</div><h3>Federal Financial Aid Return of Funds</h3>
+            <p>Formal R2T4 policy covering withdrawal triggers, earned/unearned Title IV aid, withdrawal dates, return timelines, and student responsibility.</p>
+            <div class="tiny"><span>Formal Policy</span><span>Effective Oct. 22, 2025</span><span>Annual Review</span></div>
+            <a href="https://www.umgc.edu/administration/policies-and-reporting/policies/student-affairs/federal-financial-aid-return-of-funds" target="_blank" rel="noopener">Open authoritative source ↗</a>
+          </article>
+          <article class="kcard">
+            <div class="kicon">FA</div><h3>Dropping or Withdrawing & Financial Aid</h3>
+            <p>Student-facing explanation of enrollment changes, the R2T4 process, earned aid, individualized enrollment periods, and 60% completion concepts.</p>
+            <div class="tiny"><span>Guidance</span><span>Financial Aid</span><span>Public</span></div>
+            <a href="https://www.umgc.edu/current-students/finances/financial-aid/dropping-or-withdrawing-and-financial-aid" target="_blank" rel="noopener">Open source ↗</a>
+          </article>
+          <article class="kcard">
+            <div class="kicon">VA</div><h3>Veterans Certification Form</h3>
+            <p>Public Help Center instructions for requesting VA education benefits after registration, including a stated processing timeframe.</p>
+            <div class="tiny"><span>Help Article</span><span>VA Benefits</span><span>Workflow</span></div>
+            <a href="https://www.umgc.edu/help/article/complete-veterans-certification-form" target="_blank" rel="noopener">Open source ↗</a>
+          </article>
+          <article class="kcard">
+            <div class="kicon">WD</div><h3>Course Withdrawal Policy</h3>
+            <p>Formal policy defining drop versus withdrawal, deadlines, transcript impact, tuition/refund responsibility, aid implications, and exceptions.</p>
+            <div class="tiny"><span>Formal Policy</span><span>Effective June 10, 2026</span><span>Academic Affairs</span></div>
+            <a href="https://www.umgc.edu/administration/policies-and-reporting/policies/academic-affairs/course-withdrawal" target="_blank" rel="noopener">Open authoritative source ↗</a>
+          </article>
+          <article class="kcard">
+            <div class="kicon">MT</div><h3>Return of Military Tuition Assistance</h3>
+            <p>Public guidance explaining earned TA, withdrawal before 60% completion, potential returned funds, balances, and military-service exceptions.</p>
+            <div class="tiny"><span>Military TA</span><span>Financial Impact</span><span>Public</span></div>
+            <a href="https://www.umgc.edu/current-students/finances/third-party-billing/returns-of-military-tuition-assistance" target="_blank" rel="noopener">Open source ↗</a>
+          </article>
+          <article class="kcard">
+            <div class="kicon">VB</div><h3>Drop & Withdrawal FAQs</h3>
+            <p>Supporting public FAQ content describing financial aid, military benefits, veterans benefit repayment considerations, and mitigating circumstances.</p>
+            <div class="tiny"><span>FAQ</span><span>VA</span><span>Withdrawal</span></div>
+            <a href="https://www.umgc.edu/current-students/course-registration/registration/drop-and-withdrawal/faqs" target="_blank" rel="noopener">Open source ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="page-governance">
+      <div class="section">
+        <div class="section-head">
+          <div><div class="eyebrow">Responsible AI by Design</div><h2>Governance is part of the product.</h2></div>
+          <p>OpsGuide is designed as a retrieval and guidance layer—not a replacement for authoritative policy or professional judgment.</p>
+        </div>
+        <div class="info-panel">
+          <div>
+            <h3>Source-grounded response policy</h3>
+            <p>Operational guidance should be produced only when sufficient evidence exists in approved sources. If reliable evidence is unavailable, the system should refuse to invent an answer and route the employee to related resources or human escalation.</p>
+          </div>
+          <div class="checklist">
+            <div class="check">Every substantive operational answer includes a traceable source.</div>
+            <div class="check">Exact page or section references appear only when reliably known.</div>
+            <div class="check">Superseded or retired content is excluded from normal retrieval.</div>
+            <div class="check">Cross-domain questions trigger clarification instead of assumption.</div>
+            <div class="check">Potential source conflicts are surfaced rather than silently resolved.</div>
+            <div class="check">No student PII is included in the portfolio prototype.</div>
+          </div>
+        </div>
+        <div class="grid" style="margin-top:16px">
+          <article class="kcard"><div class="kicon">01</div><h3>Verified Answer</h3><p>Evidence is sufficient and current. The response is summarized and paired with source attribution.</p></article>
+          <article class="kcard"><div class="kicon">02</div><h3>Review Recommended</h3><p>Relevant information exists, but the scenario requires additional context, cross-domain review, or employee verification.</p></article>
+          <article class="kcard"><div class="kicon">03</div><h3>No Verified Answer</h3><p>The approved library does not support a reliable answer. The product presents related resources and escalation instead.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">OpsGuide AI • Independent Product Management Portfolio Prototype • v0.2 • <a href="case-study.html" style="color:inherit;font-weight:800">View Product Case Study</a></footer>
+  </main>
+</div>
+
+<script>
+const sources = {
+  r2t4: {
+    title:"Federal Financial Aid Return of Funds Policy",
+    desc:"Formal policy covering R2T4 withdrawal triggers, earned and unearned Title IV aid, withdrawal dates, return order, and return timelines.",
+    meta:["Formal Policy","Effective Oct. 22, 2025","Owner: SVP, COO"],
+    url:"https://www.umgc.edu/administration/policies-and-reporting/policies/student-affairs/federal-financial-aid-return-of-funds"
+  },
+  aid: {
+    title:"Dropping or Withdrawing and Financial Aid",
+    desc:"Student-facing guidance on how enrollment changes may affect federal financial aid and when an R2T4 calculation can occur.",
+    meta:["Financial Aid","Public Guidance","Enrollment Change"],
+    url:"https://www.umgc.edu/current-students/finances/financial-aid/dropping-or-withdrawing-and-financial-aid"
+  },
+  vaform: {
+    title:"How do I complete the Veterans Certification form?",
+    desc:"Public Help Center workflow for requesting VA education benefits after course registration.",
+    meta:["Help Article","VA Benefits","10–15 business days"],
+    url:"https://www.umgc.edu/help/article/complete-veterans-certification-form"
+  },
+  vawithdraw: {
+    title:"Drop and Withdrawal FAQs",
+    desc:"Public FAQ guidance addressing veterans benefit repayment considerations and mitigating circumstances after a drop or withdrawal.",
+    meta:["FAQ","Veterans Benefits","Withdrawal"],
+    url:"https://www.umgc.edu/current-students/course-registration/registration/drop-and-withdrawal/faqs"
+  },
+  ta: {
+    title:"Return of Military Tuition Assistance",
+    desc:"Public guidance on earned TA, course completion percentage, repayment implications, and military-service exceptions.",
+    meta:["Military TA","60% Completion","Public Guidance"],
+    url:"https://www.umgc.edu/current-students/finances/third-party-billing/returns-of-military-tuition-assistance"
+  },
+  withdrawal: {
+    title:"Course Withdrawal Policy",
+    desc:"Formal academic policy defining drop and withdrawal, timelines, transcript and refund effects, aid considerations, and exceptions.",
+    meta:["Formal Policy","Effective June 10, 2026","Owner: Chief Academic Officer"],
+    url:"https://www.umgc.edu/administration/policies-and-reporting/policies/academic-affairs/course-withdrawal"
+  }
+};
+
+function sourceCard(key){
+  const s=sources[key];
+  return `<div class="source-card">
+    <div class="source-top"><div class="source-icon">↗</div><div style="flex:1"><h4>${s.title}</h4><p>${s.desc}</p></div></div>
+    <div class="meta">${s.meta.map(x=>`<span>${x}</span>`).join("")}</div>
+    <a href="${s.url}" target="_blank" rel="noopener">View source ↗</a>
+  </div>`;
+}
+
+const cases = [
+  {
+    test:q=>/veteran|va|chapter 33|certif/i.test(q) && /certif|request|submit|form|how/i.test(q) && !/withdraw|drop/i.test(q),
+    type:"Verified workflow",
+    color:"green",
+    title:"Veterans certification request",
+    answer:`After registering for courses, a student can request VA education benefits through the Veterans Certification workflow in MyUMGC. The public instructions direct the student to select <strong>Veteran Certification</strong>, choose the semester, complete the request form, and submit it. UMGC's public Help Center currently states to allow <strong>10–15 business days</strong> for certification processing.`,
+    callout:"Employee action: verify the semester and current public instructions before advising the student. This prototype does not submit the certification or access a student record.",
+    domains:["Veterans Benefits","Certification","Student Workflow"],
+    src:["vaform"]
+  },
+  {
+    test:q=>/military|tuition assistance|\bta\b/i.test(q) && /withdraw|drop|60/i.test(q),
+    type:"Verified answer",
+    title:"Military Tuition Assistance and withdrawal",
+    answer:`If a servicemember officially or unofficially withdraws before completing at least <strong>60% of the course</strong>, the student may not be eligible for the full Tuition Assistance amount originally awarded. UMGC may have to return some or all unearned TA to the military, which can create a balance on the student's account. UMGC also advises contacting the military education counselor or education services officer before withdrawing.`,
+    callout:"Potential exception: UMGC's public guidance states that a withdrawal due to a military service obligation may qualify for an exception, subject to the applicable request and approval process.",
+    domains:["Military TA","Withdrawal","Student Balance","Exception Review"],
+    src:["ta","withdrawal"]
+  },
+  {
+    test:q=>/financial aid|title iv|r2t4|federal aid/i.test(q) && /withdraw|drop|stop|60/i.test(q),
+    type:"Verified answer",
+    title:"Federal financial aid after withdrawal",
+    answer:`A withdrawal or other qualifying enrollment change can trigger a Return of Title IV Funds (R2T4) review. UMGC's policy states that the school determines the portion of Title IV aid earned based on the student's completed portion of the enrollment period. When the withdrawal date is on or before 60% completion, earned aid is based on the completed percentage; after more than 60%, the percentage earned is 100%. Unearned aid that must be returned can create a balance owed to UMGC.`,
+    callout:"Important: R2T4 is separate from the university's tuition and fee refund policy. Individual outcomes depend on the student's enrollment and aid circumstances; this tool should guide the employee to the policy, not calculate a student's liability.",
+    domains:["Federal Financial Aid","R2T4","Withdrawal","Account Impact"],
+    src:["r2t4","aid","withdrawal"]
+  },
+  {
+    test:q=>/va|veteran|chapter 33/i.test(q) && /withdraw|drop/i.test(q),
+    type:"Review recommended",
+    title:"VA education benefits and withdrawal",
+    answer:`UMGC's public withdrawal FAQ states that dropping or withdrawing from a course can require repayment of veterans education benefits received for the course, potentially including tuition payments, book allowances, and housing or monthly allowances. It also notes that the VA may consider <strong>mitigating circumstances</strong>; if approved, benefits may be allowed through the last date of attendance.`,
+    callout:"Because repayment and mitigating-circumstance outcomes are case-specific and administered under VA rules, the employee should verify the current guidance and avoid making a definitive repayment determination from this summary alone.",
+    domains:["Veterans Benefits","Withdrawal","Potential Repayment","Mitigating Circumstances"],
+    src:["vawithdraw","withdrawal"]
+  },
+  {
+    test:q=>/withdraw|drop/i.test(q),
+    type:"Clarification required",
+    title:"Withdrawal can affect more than one operational domain",
+    answer:`A course withdrawal may have different consequences depending on the student's funding and enrollment situation. Before giving a single answer, OpsGuide would clarify which domains apply and route the employee to the corresponding approved guidance.`,
+    callout:"Suggested clarification: Is the student using federal financial aid, VA education benefits, Military Tuition Assistance, multiple funding sources, or none of these?",
+    domains:["Academic Withdrawal","Federal Aid — if applicable","VA Benefits — if applicable","Military TA — if applicable","Tuition/Refunds"],
+    src:["withdrawal","r2t4","vawithdraw","ta"]
+  }
+];
+
+function renderAnswer(q){
+  const found=cases.find(c=>c.test(q));
+  if(!found){
+    return `<div class="answer-card">
+      <div class="answer-head"><div class="answer-type"><span class="dot" style="background:#8a95a7;box-shadow:0 0 0 5px #eef1f5"></span>No verified answer found</div><span class="source-badge">Escalation state</span></div>
+      <div class="answer-body">
+        <h3>I couldn't verify this question from the approved prototype knowledge library.</h3>
+        <p>OpsGuide should not invent organizational guidance when the indexed evidence does not support a reliable answer. Try rephrasing the question, browse the approved source library, or escalate to an authorized senior resource.</p>
+        <div class="callout" style="border-left-color:#8a95a7;background:#f7f8fa">This behavior is intentional. Refusal is a product requirement when approved evidence is insufficient.</div>
+      </div>
+      <div class="feedback"><span>Was this routing helpful?</span><div class="feedback-btns"><button onclick="vote(this)">👍</button><button onclick="vote(this)">👎</button></div></div>
+    </div>`;
+  }
+  const dotStyle=found.type.includes("Review")||found.type.includes("Clarification") ? "background:#c17a12;box-shadow:0 0 0 5px #fff2d9" : "";
+  return `<div class="answer-card">
+    <div class="answer-head"><div class="answer-type"><span class="dot" style="${dotStyle}"></span>${found.type}</div><span class="source-badge">${found.src.length} source${found.src.length>1?"s":""} found</span></div>
+    <div class="answer-body">
+      <h3>${found.title}</h3>
+      <p>${found.answer}</p>
+      <div class="domain-row">${found.domains.map(d=>`<span class="domain">${d}</span>`).join("")}</div>
+      <div class="callout">${found.callout}</div>
+      <h3 style="margin-top:20px">Supporting sources</h3>
+      <div class="sources">${found.src.map(sourceCard).join("")}</div>
+    </div>
+    <div class="feedback"><span>Was this answer and source path helpful?</span><div class="feedback-btns"><button onclick="vote(this)">👍 Helpful</button><button onclick="vote(this)">👎 Not helpful</button></div></div>
+  </div>`;
+}
+
+const prompt=document.getElementById("prompt");
+const btn=document.getElementById("askBtn");
+const area=document.getElementById("answerArea");
+const loader=document.getElementById("loader");
+
+function ask(q){
+  q=(q||prompt.value).trim();
+  if(!q){prompt.focus();return}
+  prompt.value=q;
+  area.classList.remove("show");
+  loader.classList.add("show");
+  setTimeout(()=>{
+    loader.classList.remove("show");
+    area.innerHTML=renderAnswer(q);
+    area.classList.add("show");
+    area.scrollIntoView({behavior:"smooth",block:"nearest"});
+  },520);
+}
+btn.addEventListener("click",()=>ask());
+prompt.addEventListener("keydown",e=>{if(e.key==="Enter")ask()});
+document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>ask(c.textContent)));
+function vote(el){el.parentElement.querySelectorAll("button").forEach(b=>b.classList.remove("selected"));el.classList.add("selected")}
+
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("active"));
+  b.classList.add("active");
+  document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
+  document.getElementById("page-"+b.dataset.page).classList.add("active");
+  document.getElementById("sidebar").classList.remove("open");
+  window.scrollTo({top:0,behavior:"smooth"});
+}));
+document.getElementById("mobileMenu").addEventListener("click",()=>document.getElementById("sidebar").classList.toggle("open"));
+</script>
+</body>
+</html>
