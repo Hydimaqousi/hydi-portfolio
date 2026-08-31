@@ -438,6 +438,40 @@
     .case h3{margin:0 0 11px;color:var(--espresso-950);font-size:1.18rem}
     .case h4{margin:18px 0 5px;color:var(--espresso-700);font-size:.82rem;text-transform:uppercase;letter-spacing:.09em}
     .case p{margin:0;color:var(--muted)}
+
+    .case.featured{
+      grid-column:1/-1;
+      display:grid;
+      grid-template-columns:minmax(260px,.72fr) minmax(0,1.28fr);
+      min-height:350px;
+      border-color:#cfc6ee;
+      box-shadow:0 24px 60px rgba(62,55,102,.13);
+    }
+    .case.featured .case-top{
+      min-height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      background:
+        radial-gradient(circle at 78% 20%,rgba(53,189,197,.24),transparent 27%),
+        radial-gradient(circle at 20% 82%,rgba(125,114,255,.28),transparent 29%),
+        linear-gradient(145deg,#172a4f,#263f70);
+      color:white;
+      border:0;
+      padding:30px;
+    }
+    .case.featured .case-label{background:rgba(255,255,255,.12);color:white}
+    .feature-mark{width:72px;height:72px;border-radius:22px;background:linear-gradient(135deg,#7d72ff,#35bdc5);display:grid;place-items:center;font-weight:950;font-size:1.25rem;box-shadow:0 14px 35px rgba(53,189,197,.22)}
+    .feature-copy{color:#d9e4f4;font-size:.9rem;line-height:1.6}
+    .case.featured .case-body{padding:32px}
+    .case.featured h3{font-size:1.55rem}
+    .project-tags{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}
+    .project-tags span{padding:6px 9px;border-radius:999px;background:#f0effb;color:#56519d;font-size:.72rem;font-weight:850}
+    .project-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+    .project-actions a{display:inline-flex;text-decoration:none;font-weight:850;border-radius:999px;padding:10px 14px;border:1px solid var(--espresso-700)}
+    .project-actions .project-primary{background:var(--espresso-800);color:white}
+    .project-actions .project-secondary{color:var(--espresso-800);background:white}
+
     .case-result{
       margin-top:auto;
       padding-top:20px;
@@ -539,6 +573,7 @@
       .focus-grid,.process{grid-template-columns:repeat(2,1fr)}
       .metrics{grid-template-columns:repeat(3,1fr)}
       .case-grid,.skill-grid,.targets,.credential-row{grid-template-columns:1fr}
+      .case.featured{grid-template-columns:1fr}
       .role-card{grid-template-columns:1fr}
       .process-step:not(:last-child)::after{display:none}
     }
@@ -892,6 +927,33 @@
         </p>
 
         <div class="case-grid">
+
+          <article class="case featured reveal">
+            <div class="case-top">
+              <div><span class="case-label">Featured Product Project</span></div>
+              <div class="feature-mark">AI</div>
+              <div class="feature-copy">
+                Independent product concept using public policy content to demonstrate source-grounded AI, knowledge management, UX, governance, and product strategy.
+              </div>
+            </div>
+            <div class="case-body">
+              <h3>OpsGuide AI — Operational Knowledge & Workflow Assistant</h3>
+              <div class="project-tags">
+                <span>Product Management</span><span>Applied AI</span><span>Business Analysis</span><span>Process Improvement</span><span>UX</span><span>Knowledge Management</span>
+              </div>
+              <h4>Problem</h4>
+              <p>Employees can lose time searching across fragmented policies, job aids, presentations, FAQs, and training resources simply to determine where authoritative guidance lives.</p>
+              <h4>Product Approach</h4>
+              <p>I translated the operational pain point into an MVP with natural-language retrieval, mandatory source attribution, cross-domain clarification, source freshness, refusal behavior, human escalation, feedback, and measurable success targets.</p>
+              <div class="case-result">
+                <div class="result-box"><strong>Current output:</strong> Interactive V0.2 prototype + product strategy + 12 functional requirements + acceptance criteria + UAT scenarios + governance model + roadmap.</div>
+              </div>
+              <div class="project-actions">
+                <a class="project-primary" href="projects/opsguide-ai/index.html">Launch Prototype</a>
+                <a class="project-secondary" href="projects/opsguide-ai/case-study.html">View Full Case Study</a>
+              </div>
+            </div>
+          </article>
           <article class="case reveal">
             <div class="case-top"><span class="case-label">Higher Education Operations</span></div>
             <div class="case-body">
