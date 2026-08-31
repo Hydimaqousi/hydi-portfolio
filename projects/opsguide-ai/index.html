@@ -243,7 +243,7 @@ h1 span{background:linear-gradient(90deg,var(--indigo),var(--cyan));-webkit-back
         <div>
           <div class="eyebrow">Enterprise Knowledge Experience</div>
           <h1>Ask once. <span>Verify fast.</span> Work with confidence.</h1>
-          <p>OpsGuide AI helps frontline teams locate concise, source-grounded operational guidance without manually searching across scattered policies, job aids, presentations, FAQs, and training resources.</p>
+          <p>OpsGuide AI is a source-grounded decision-support workspace for Financial Solutions Advisors and Financial Aid Advisors. It turns complex federal and institutional guidance into fast, verifiable operational answers—without forcing advisors to search entire websites, long policy documents, or multiple training resources.</p>
         </div>
         <div class="hero-art" aria-label="Conceptual knowledge flow visualization">
           <div class="orb one"></div><div class="orb two"></div>
@@ -260,43 +260,70 @@ h1 span{background:linear-gradient(90deg,var(--indigo),var(--cyan));-webkit-back
           <div class="search-title">
             <div>
               <h2>What can I help you find?</h2>
-              <p>Ask a policy, process, benefits, certification, or withdrawal question.</p>
+              <p>Ask a financial-aid, loan-limit, enrollment, withdrawal, military-benefit, or certification question.</p>
             </div>
-            <div class="source-badge">Demo knowledge set: UMGC public resources</div>
+            <div class="source-badge">Demo knowledge set: Federal Student Aid + UMGC public resources</div>
           </div>
           <div class="prompt-box">
-            <input id="prompt" aria-label="Ask OpsGuide" placeholder="Example: What happens to financial aid when a student withdraws?">
+            <input id="prompt" aria-label="Ask OpsGuide" placeholder="Example: Independent undergrad, 60+ credits — what is the annual Direct Loan limit?">
             <button class="ask-btn" id="askBtn"><span>Ask OpsGuide</span> →</button>
           </div>
           <div class="chips">
+            <button class="chip">Independent undergrad with 60+ credits: what is the annual Direct Loan limit?</button>
+            <button class="chip">Graduate student taking 12 credits across the academic year: what is the estimated Direct Unsubsidized eligibility?</button>
+            <button class="chip">How many credits does a standard graduate student need for 100% annual loan eligibility?</button>
+            <button class="chip">Can a new graduate borrower receive Grad PLUS after July 1, 2026?</button>
+            <button class="chip">What are the new Parent PLUS limits for 2026–27?</button>
+            <button class="chip">Independent undergrad, 60+ earned credits, enrolled in 6 credits — how much loan can they get?</button>
             <button class="chip">What happens to federal financial aid if a student withdraws?</button>
             <button class="chip">How does a student request VA certification?</button>
-            <button class="chip">What happens to Military TA if a student withdraws before 60%?</button>
-            <button class="chip">My student wants to withdraw. What areas should I review?</button>
-            <button class="chip">What is the policy for a parking permit?</button>
           </div>
           <div class="loader" id="loader"><div class="spinner"></div>Searching approved resources and validating evidence…</div>
           <div class="answer-area" id="answerArea"></div>
         </div>
 
         <div class="stats">
-          <div class="stat"><strong>6</strong><span>Approved public sources indexed</span></div>
-          <div class="stat"><strong>4</strong><span>Operational domains in MVP</span></div>
+          <div class="stat"><strong>13</strong><span>Approved federal + UMGC sources modeled</span></div>
+          <div class="stat"><strong>8</strong><span>Advisor scenarios in expanded demo</span></div>
           <div class="stat"><strong>100%</strong><span>Target citation coverage</span></div>
           <div class="stat"><strong>&lt;30s</strong><span>Target employee retrieval time</span></div>
         </div>
       </div>
 
-      <div class="disclaimer"><div><strong>Independent portfolio prototype.</strong> This project uses publicly available UMGC information for demonstration. It was not developed for, endorsed by, or affiliated with UMGC. No proprietary internal documentation, student records, or personally identifiable student information is used. Users should verify current policy directly with the authoritative source.</div></div>
+      <div class="disclaimer"><div><strong>Independent portfolio prototype.</strong> This project uses publicly available Federal Student Aid/StudentAid.gov and UMGC information for demonstration. It was not developed for, endorsed by, or affiliated with UMGC. No proprietary internal documentation, student records, or personally identifiable student information is used. Users should verify current policy directly with the authoritative source.</div></div>
     </section>
 
     <section class="page" id="page-knowledge">
       <div class="section">
         <div class="section-head">
           <div><div class="eyebrow">Knowledge Architecture</div><h2>Approved Source Library</h2></div>
-          <p>The MVP separates authoritative policies from supporting FAQs and help content, preserves source metadata, and routes every answer back to verifiable evidence.</p>
+          <p>V0.4 separates authoritative policies from supporting FAQs and help content, preserves source metadata, applies source hierarchy, surfaces conflicts, and routes every answer back to verifiable evidence.</p>
         </div>
         <div class="grid">
+          <article class="kcard">
+            <div class="kicon">DL</div><h3>Direct Loan Limits — Federal + UMGC</h3>
+            <p>Annual Direct Subsidized/Unsubsidized limits by dependency and grade level, paired with UMGC's public implementation guidance.</p>
+            <div class="tiny"><span>Federal Student Aid</span><span>UMGC</span><span>Loan Limits</span></div>
+            <a href="https://studentaid.gov/articles/subsidized-vs-unsubsidized-loans/" target="_blank" rel="noopener">Open federal source ↗</a>
+          </article>
+          <article class="kcard">
+            <div class="kicon">26</div><h3>2026–27 Enrollment-Based Loan Adjustments</h3>
+            <p>UMGC guidance for annual loan eligibility based on program-applicable credits: 24 undergraduate, 18 standard graduate, and 12 doctoral credits for a full-time academic year.</p>
+            <div class="tiny"><span>Effective Summer 2026</span><span>Enrollment</span><span>Proration</span></div>
+            <a href="https://www.umgc.edu/tuition-financial-assistance/payment-finance-options/one-big-beautiful-bill-act/less-than-full-time-enrollment" target="_blank" rel="noopener">Open UMGC implementation ↗</a>
+          </article>
+          <article class="kcard">
+            <div class="kicon">G+</div><h3>Graduate PLUS Changes</h3>
+            <p>Federal and UMGC guidance on the July 1, 2026 end of Grad PLUS for new borrowers and the limited exception for qualifying continuing borrowers.</p>
+            <div class="tiny"><span>Federal Student Aid</span><span>Effective July 1, 2026</span><span>Legacy Exception</span></div>
+            <a href="https://studentaid.gov/plus-loan-credit-counseling" target="_blank" rel="noopener">Open federal source ↗</a>
+          </article>
+          <article class="kcard">
+            <div class="kicon">P+</div><h3>Parent PLUS 2026–27 Limits</h3>
+            <p>New $20,000 annual per-student limit and $65,000 aggregate per-student limit, with limited exceptions described in current UMGC guidance.</p>
+            <div class="tiny"><span>2026–27</span><span>Parent PLUS</span><span>Limits</span></div>
+            <a href="https://www.umgc.edu/tuition-financial-assistance/payment-finance-options/one-big-beautiful-bill-act/federal-loan-limit-exceptions" target="_blank" rel="noopener">Open UMGC source ↗</a>
+          </article>
           <article class="kcard">
             <div class="kicon">R2</div><h3>Federal Financial Aid Return of Funds</h3>
             <p>Formal R2T4 policy covering withdrawal triggers, earned/unearned Title IV aid, withdrawal dates, return timelines, and student responsibility.</p>
@@ -354,7 +381,7 @@ h1 span{background:linear-gradient(90deg,var(--indigo),var(--cyan));-webkit-back
             <div class="check">Superseded or retired content is excluded from normal retrieval.</div>
             <div class="check">Cross-domain questions trigger clarification instead of assumption.</div>
             <div class="check">Potential source conflicts are surfaced rather than silently resolved.</div>
-            <div class="check">No student PII is included in the portfolio prototype.</div>
+            <div class="check">Calculations expose the rule, inputs, and assumptions instead of hiding the math.</div><div class="check">Ambiguous term credits vs. annual credits trigger a clarification instead of an invented award.</div><div class="check">No student PII is included in the portfolio prototype.</div>
           </div>
         </div>
         <div class="grid" style="margin-top:16px">
@@ -365,17 +392,65 @@ h1 span{background:linear-gradient(90deg,var(--indigo),var(--cyan));-webkit-back
       </div>
     </section>
 
-    <footer class="footer">OpsGuide AI • Independent Product Management Portfolio Prototype • v0.2 • <a href="case-study.html" style="color:inherit;font-weight:800">View Product Case Study</a></footer>
+    <footer class="footer">OpsGuide AI • Independent Product Management Portfolio Prototype • v0.5</footer>
   </main>
 </div>
 
 <script>
 const sources = {
+  fsaLimits: {
+    title:"Federal Student Aid — Subsidized vs. Unsubsidized Loan Limits",
+    desc:"Federal Student Aid tables for annual undergraduate loan limits by dependency and grade level, plus the $20,500 graduate annual Direct Unsubsidized limit.",
+    meta:["Federal Authority","StudentAid.gov","Direct Loans"],
+    url:"https://studentaid.gov/articles/subsidized-vs-unsubsidized-loans/"
+  },
+  fsaPlus: {
+    title:"Federal Student Aid — PLUS Loan Credit Counseling",
+    desc:"Current federal guidance describing the July 1, 2026 Graduate PLUS change, limited exception, and updated graduate borrowing limits.",
+    meta:["Federal Authority","Effective July 1, 2026","PLUS / Graduate"],
+    url:"https://studentaid.gov/plus-loan-credit-counseling"
+  },
+  umgcDirect: {
+    title:"UMGC — Federal Direct Loan",
+    desc:"UMGC public guidance on annual and aggregate limits, half-time status, Parent PLUS limits, and Graduate PLUS changes for 2026–27.",
+    meta:["Institutional Implementation","2026–27","Loan Limits"],
+    url:"https://www.umgc.edu/current-students/finances/financial-aid/grants-and-loans/federal-direct-loan"
+  },
+  umgcIndependent: {
+    title:"UMGC — Independent Student Direct Loan Limit",
+    desc:"UMGC Help Center guidance: $9,500 first year, $10,500 second year, and $12,500 third year or higher for independent undergraduates, subject to enrollment-based adjustments.",
+    meta:["Institutional Guidance","Grade Level","Independent Undergraduate"],
+    url:"https://www.umgc.edu/help/article/independent-student-federal-direct-loan-limit"
+  },
+  umgcEnrollment: {
+    title:"UMGC — Less Than Full-Time Enrollment",
+    desc:"Summer 2026 implementation guidance for proportional annual loan eligibility based on program-applicable credits across the academic year.",
+    meta:["Institutional Implementation","Effective Summer 2026","Enrollment Proration"],
+    url:"https://www.umgc.edu/tuition-financial-assistance/payment-finance-options/one-big-beautiful-bill-act/less-than-full-time-enrollment"
+  },
+  umgcDisbursement: {
+    title:"UMGC — Financial Aid Disbursement",
+    desc:"UMGC public guidance on half-time enrollment, active enrollment, program-applicable credits, loan disbursement, and rolling award adjustments.",
+    meta:["Institutional Guidance","Enrollment / Disbursement","Summer 2026"],
+    url:"https://www.umgc.edu/current-students/finances/financial-aid/disbursement"
+  },
+  umgcExceptions: {
+    title:"UMGC — Federal Loan Limit Exceptions",
+    desc:"UMGC public scenarios for Graduate PLUS and Parent PLUS limited exceptions under the July 1, 2026 changes.",
+    meta:["Institutional Implementation","2026–27","Limited Exceptions"],
+    url:"https://www.umgc.edu/tuition-financial-assistance/payment-finance-options/one-big-beautiful-bill-act/federal-loan-limit-exceptions"
+  },
   r2t4: {
     title:"Federal Financial Aid Return of Funds Policy",
     desc:"Formal policy covering R2T4 withdrawal triggers, earned and unearned Title IV aid, withdrawal dates, return order, and return timelines.",
     meta:["Formal Policy","Effective Oct. 22, 2025","Owner: SVP, COO"],
     url:"https://www.umgc.edu/administration/policies-and-reporting/policies/student-affairs/federal-financial-aid-return-of-funds"
+  },
+  r2faq: {
+    title:"Return of Title IV Funds FAQs",
+    desc:"Supporting FAQ covering R2T4 recalculation, earned/unearned aid, notification, and return-order guidance.",
+    meta:["Supporting FAQ","Title IV","Review against formal policy"],
+    url:"https://www.umgc.edu/current-students/course-registration/registration/drop-and-withdrawal/return-of-title-iv-funds-faqs"
   },
   aid: {
     title:"Dropping or Withdrawing and Financial Aid",
@@ -414,11 +489,93 @@ function sourceCard(key){
   return `<div class="source-card">
     <div class="source-top"><div class="source-icon">↗</div><div style="flex:1"><h4>${s.title}</h4><p>${s.desc}</p></div></div>
     <div class="meta">${s.meta.map(x=>`<span>${x}</span>`).join("")}</div>
+    <div style="margin-top:8px;font-size:.7rem;color:#667085"><strong>Authority:</strong> ${s.meta[0]==="Federal Authority"?"Primary federal authority":s.meta[0]==="Formal Policy"?"Primary institutional authority":s.meta[0]==="Institutional Implementation"?"Institutional implementation guidance":"Supporting public guidance"}</div>
     <a href="${s.url}" target="_blank" rel="noopener">View source ↗</a>
   </div>`;
 }
 
 const cases = [
+  {
+    test:q=>/independent/i.test(q) && /(60\+|60|third|3rd)/i.test(q) && /loan|borrow|limit/i.test(q) && !/(6|12|18|24)\s*credit/i.test(q),
+    type:"Verified answer",
+    title:"Independent undergraduate — third year or higher annual Direct Loan limit",
+    answer:`For an <strong>independent undergraduate who has completed at least 60 credits</strong>, the published annual combined Direct Subsidized + Direct Unsubsidized Loan limit is <strong>$12,500</strong>. No more than <strong>$5,500</strong> of that annual limit may be subsidized. This is the base annual maximum before enrollment-based adjustments and other eligibility constraints.`,
+    callout:"Advisor check: the actual amount may be lower based on program-applicable enrollment across the academic year, remaining annual/aggregate eligibility, Cost of Attendance, other aid, and other federal eligibility requirements.",
+    domains:["Direct Loans","Independent Undergraduate","60+ Credits","2026–27"],
+    src:["fsaLimits","umgcIndependent","umgcDirect"]
+  },
+  {
+    test:q=>/dependent/i.test(q) && /(60\+|60|third|3rd)/i.test(q) && /loan|borrow|limit/i.test(q),
+    type:"Verified answer",
+    title:"Dependent undergraduate — third year or higher annual Direct Loan limit",
+    answer:`For a <strong>dependent undergraduate in the third year or beyond</strong>, the published annual combined Direct Subsidized + Direct Unsubsidized Loan limit is <strong>$7,500</strong>, with no more than <strong>$5,500 subsidized</strong>. A dependent student whose parent cannot obtain a PLUS Loan may qualify for the higher independent-student unsubsidized limits, subject to school determination.`,
+    callout:"Advisor check: verify dependency status, grade level, any Parent PLUS denial/exception circumstances, enrollment-based adjustment, aggregate usage, COA, and other aid before treating the maximum as an award amount.",
+    domains:["Direct Loans","Dependent Undergraduate","Grade Level","Loan Limits"],
+    src:["fsaLimits","umgcDirect"]
+  },
+  {
+    test:q=>/graduate/i.test(q) && /(how many|credits|required|full amount|100%|full annual)/i.test(q) && !/plus/i.test(q),
+    type:"Verified answer",
+    title:"Standard graduate enrollment for 100% annual loan-limit comparison",
+    answer:`UMGC's current public implementation guidance defines <strong>18 program-applicable credits across the academic year</strong> as full-time for a standard graduate program for this annual loan-adjustment framework. The published annual Direct Unsubsidized Loan limit for a graduate student is <strong>$20,500</strong>.`,
+    callout:"Important distinction: 6 credits is UMGC's standard graduate half-time threshold for federal loan disbursement, while 18 program-applicable credits across the academic year is the full-time annual comparison used in the Summer 2026 enrollment-based adjustment framework. The $20,500 figure is a maximum, not a guaranteed award.",
+    domains:["Graduate","Direct Unsubsidized","18 Annual Credits","Enrollment Proration"],
+    src:["fsaLimits","umgcEnrollment","umgcDirect","umgcDisbursement"]
+  },
+  {
+    test:q=>/graduate/i.test(q) && /12\s*credit/i.test(q) && /loan|eligib|amount|expect|receive/i.test(q),
+    type:"Verified calculation example",
+    title:"Graduate — 12 program-applicable credits across the academic year",
+    answer:`Using UMGC's published 2026–27 example, <strong>12 annual credits ÷ 18 full-time annual credits = about 67%</strong>. Applied to the <strong>$20,500</strong> annual Direct Unsubsidized limit, UMGC's published scenario shows total eligibility of <strong>$13,735</strong> (illustrated as $6,867 fall + $6,868 spring).`,
+    callout:"This is a published-rule scenario, not an individual award determination. Verify that the 12 credits are program-applicable and confirm remaining annual/aggregate eligibility, COA, other aid, active enrollment, and any shorter-than-academic-year or graduation proration.",
+    domains:["Graduate","12 Annual Credits","67% Enrollment","Transparent Calculation"],
+    src:["umgcEnrollment","fsaLimits","umgcDisbursement"]
+  },
+  {
+    test:q=>/independent/i.test(q) && /(60\+|60|third|3rd)/i.test(q) && /6\s*credit/i.test(q) && /loan|amount|expect|receive|eligib/i.test(q),
+    type:"Clarification required",
+    title:"6 credits alone is not enough to determine the annual loan amount",
+    answer:`For an independent third-year-or-higher undergraduate, the base annual Direct Loan limit is <strong>$12,500</strong> (maximum $5,500 subsidized). At UMGC, <strong>6 credits in a term meets the standard undergraduate half-time threshold</strong> for federal loan disbursement. However, beginning Summer 2026, annual loan eligibility is adjusted using <strong>program-applicable credits across the academic year</strong>, compared with <strong>24 credits</strong> for a full-time undergraduate academic year.`,
+    callout:"OpsGuide needs one more input before estimating: How many program-applicable credits will the student be enrolled in across the full academic year (for example, summer + fall + spring)? It should not assume that '6 credits' means 6 annual credits or automatically divide $12,500 by two.",
+    domains:["Independent Undergraduate","6 Term Credits","Half-Time","Need Annual Enrollment"],
+    src:["fsaLimits","umgcIndependent","umgcEnrollment","umgcDisbursement"]
+  },
+  {
+    test:q=>/independent/i.test(q) && /(60\+|60|third|3rd)/i.test(q) && /12\s*credit/i.test(q) && /loan|amount|expect|receive|eligib/i.test(q),
+    type:"Clarification required",
+    title:"12 credits in one term does not by itself establish the annual loan amount",
+    answer:`For an independent third-year-or-higher undergraduate, the base annual Direct Loan maximum is <strong>$12,500</strong>. UMGC defines <strong>24 program-applicable credits across the academic year</strong> as full-time for the Summer 2026 annual loan-adjustment framework. A 12-credit term is full-time term enrollment, but OpsGuide still needs the student's <strong>total program-applicable credits across the academic year</strong> before estimating annual eligibility.`,
+    callout:"Advisor follow-up: confirm planned/active program-applicable credits across summer, fall, and spring. If the advisor explicitly confirms 12 total annual program-applicable credits, that represents 50% of UMGC's 24-credit full-time annual comparison; final eligibility still requires all other federal and institutional checks.",
+    domains:["Independent Undergraduate","12 Term Credits","Annual Enrollment Needed","2026–27"],
+    src:["fsaLimits","umgcIndependent","umgcEnrollment","umgcDisbursement"]
+  },
+  {
+    test:q=>/(grad|graduate).*plus|plus.*(grad|graduate)/i.test(q) && /(2026|july|new|can|eligible|receive|available)/i.test(q),
+    type:"Review recommended — effective-date rule",
+    title:"Graduate PLUS after July 1, 2026",
+    answer:`Starting <strong>July 1, 2026</strong>, Direct PLUS Loans are no longer available to new graduate/professional borrowers. A limited exception may apply when the student was enrolled in the program as of June 30, 2026, borrowed a Direct Loan for that program before July 1, 2026, and remains continuously enrolled in the same program at the same school.`,
+    callout:"Advisor action: do not answer yes/no from graduate status alone. Verify prior Direct Loan disbursement for the same program, June 30, 2026 enrollment, continuous enrollment, program continuity, and the remaining exception period.",
+    domains:["Graduate PLUS","July 1 2026","Limited Exception","Effective-Date Logic"],
+    src:["fsaPlus","umgcExceptions","umgcDirect"]
+  },
+  {
+    test:q=>/parent.*plus|plus.*parent/i.test(q) && /limit|maximum|2026|2027/i.test(q),
+    type:"Verified answer",
+    title:"Parent PLUS limits beginning 2026–27",
+    answer:`Beginning with the 2026–27 aid year, current UMGC guidance states that Parent PLUS borrowing is limited to <strong>$20,000 per academic year per student</strong> and <strong>$65,000 aggregate per student</strong>, subject to a limited exception for qualifying continuing borrowers.`,
+    callout:"Advisor action: check whether the student/parent qualifies for the limited exception before applying the new caps. Also verify COA, other aid, credit eligibility, and current federal guidance.",
+    domains:["Parent PLUS","$20,000 Annual","$65,000 Aggregate","2026–27"],
+    src:["umgcDirect","umgcExceptions","fsaPlus"]
+  },
+  {
+    test:q=>/aggregate/i.test(q) && /graduate/i.test(q),
+    type:"Verified answer",
+    title:"Graduate Direct Loan aggregate limits — 2026 rules",
+    answer:`Current Federal Student Aid guidance states that a graduate student who has never been a professional student can borrow up to <strong>$20,500 per year</strong> in Direct Unsubsidized Loans with a <strong>$100,000 graduate aggregate limit</strong>. A new <strong>$257,500 lifetime maximum aggregate limit</strong> also applies across covered federal Direct Loans, with special rules for students who have professional-study borrowing.`,
+    callout:"Because transition and prior professional-study rules can change the applicable aggregate cap, review the student's borrowing history and the current federal source before making an individual determination.",
+    domains:["Graduate","Aggregate Limit","$100,000","$257,500 Lifetime"],
+    src:["fsaPlus","umgcDirect","umgcExceptions"]
+  },
   {
     test:q=>/veteran|va|chapter 33|certif/i.test(q) && /certif|request|submit|form|how/i.test(q) && !/withdraw|drop/i.test(q),
     type:"Verified workflow",
@@ -443,9 +600,9 @@ const cases = [
     type:"Verified answer",
     title:"Federal financial aid after withdrawal",
     answer:`A withdrawal or other qualifying enrollment change can trigger a Return of Title IV Funds (R2T4) review. UMGC's policy states that the school determines the portion of Title IV aid earned based on the student's completed portion of the enrollment period. When the withdrawal date is on or before 60% completion, earned aid is based on the completed percentage; after more than 60%, the percentage earned is 100%. Unearned aid that must be returned can create a balance owed to UMGC.`,
-    callout:"Important: R2T4 is separate from the university's tuition and fee refund policy. Individual outcomes depend on the student's enrollment and aid circumstances; this tool should guide the employee to the policy, not calculate a student's liability.",
+    callout:"Source hierarchy applied: the formal Federal Financial Aid Return of Funds Policy is treated as the primary authority; FAQs and student guidance are supporting sources. If supporting guidance conflicts with the formal policy, OpsGuide flags the conflict for review instead of silently resolving it. Individual outcomes remain case-specific; this prototype does not calculate liability.",
     domains:["Federal Financial Aid","R2T4","Withdrawal","Account Impact"],
-    src:["r2t4","aid","withdrawal"]
+    src:["r2t4","r2faq","aid","withdrawal"]
   },
   {
     test:q=>/va|veteran|chapter 33/i.test(q) && /withdraw|drop/i.test(q),
@@ -455,6 +612,15 @@ const cases = [
     callout:"Because repayment and mitigating-circumstance outcomes are case-specific and administered under VA rules, the employee should verify the current guidance and avoid making a definitive repayment determination from this summary alone.",
     domains:["Veterans Benefits","Withdrawal","Potential Repayment","Mitigating Circumstances"],
     src:["vawithdraw","withdrawal"]
+  },
+  {
+    test:q=>/conflict|different sources|sources disagree|which source/i.test(q),
+    type:"Review recommended - source conflict",
+    title:"Potential source conflict detected",
+    answer:`OpsGuide found guidance across more than one approved source. V0.4 applies a source hierarchy: a current formal policy is treated as primary authority, while FAQs and help pages provide supporting context. The system should not silently reconcile a material difference when the hierarchy or interpretation is unclear.`,
+    callout:"Human review required: compare effective dates, source owner, document type, and current status. Confirm the controlling source before advising on a case.",
+    domains:["Source Governance","Conflict Detection","Human Review"],
+    src:["r2t4","r2faq","aid"]
   },
   {
     test:q=>/withdraw|drop/i.test(q),
@@ -491,7 +657,7 @@ function renderAnswer(q){
       <h3 style="margin-top:20px">Supporting sources</h3>
       <div class="sources">${found.src.map(sourceCard).join("")}</div>
     </div>
-    <div class="feedback"><span>Was this answer and source path helpful?</span><div class="feedback-btns"><button onclick="vote(this)">👍 Helpful</button><button onclick="vote(this)">👎 Not helpful</button></div></div>
+    <div class="feedback"><span>Was this answer and source path helpful?</span><div class="feedback-btns"><button onclick="vote(this)">👍 Helpful</button><button onclick="vote(this)">👎 Not helpful</button><button onclick="vote(this)">⚑ Source may be outdated</button></div></div>
   </div>`;
 }
 
