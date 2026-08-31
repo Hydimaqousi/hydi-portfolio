@@ -40,6 +40,16 @@ section{padding:72px 0}.paper{background:var(--paper)}.section-title{max-width:8
 footer{padding:30px 0;text-align:center;color:#756d67;font-size:.75rem;border-top:1px solid var(--line);background:var(--paper)}
 @media(max-width:900px){.hero-grid,.grid2{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}.flow,.timeline{grid-template-columns:1fr}.step:not(:last-child):after{display:none}.snapshot{max-width:620px}}
 @media(max-width:620px){.wrap{width:min(var(--max),calc(100% - 26px))}.grid3{grid-template-columns:1fr}.navlinks a:not(.launch){display:none}.hero{padding-top:55px}section{padding:58px 0}}
+  .architecture{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;align-items:stretch;margin-top:24px}
+  .arch-step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 12px;text-align:center;box-shadow:0 8px 22px rgba(18,38,75,.05)}
+  .arch-step strong{display:block;color:var(--espresso);font-size:.92rem;margin-bottom:5px}
+  .arch-step span{display:block;color:var(--muted);font-size:.78rem;line-height:1.35}
+  .build-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+  .build-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+  .build-card h3{margin-top:0;color:var(--espresso);font-size:1rem}
+  .prototype-note{margin-top:18px;padding:16px 18px;border-left:4px solid var(--teal);background:#f2fbfc;border-radius:10px;color:var(--muted)}
+  @media(max-width:900px){.architecture{grid-template-columns:repeat(2,1fr)}.build-grid{grid-template-columns:1fr}}
+  @media(max-width:560px){.architecture{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -112,6 +122,23 @@ footer{padding:30px 0;text-align:center;color:#756d67;font-size:.75rem;border-to
  </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <div class="kicker">Concept Architecture</div>
+    <h2>How the intended workflow fits together.</h2>
+    <p class="lead">The current public prototype is static, but it demonstrates the user experience and decision logic that a governed production system could support.</p>
+    <div class="architecture">
+      <div class="arch-step"><strong>1. Advisor Question</strong><span>Natural-language operational question</span></div>
+      <div class="arch-step"><strong>2. Intent & Context</strong><span>Identify scenario, effective date, and missing inputs</span></div>
+      <div class="arch-step"><strong>3. Approved Knowledge</strong><span>Retrieve only governed, permissioned sources</span></div>
+      <div class="arch-step"><strong>4. Source Hierarchy</strong><span>Prioritize current federal authority and institutional implementation</span></div>
+      <div class="arch-step"><strong>5. Guided Answer</strong><span>Quick answer, advisor checks, reasoning, and citations</span></div>
+      <div class="arch-step"><strong>6. Verify or Escalate</strong><span>Open evidence, clarify uncertainty, or route to a human</span></div>
+    </div>
+    <div class="prototype-note"><strong>Prototype boundary:</strong> V0.5 uses curated, modeled responses based on public Federal Student Aid / StudentAid.gov and UMGC resources. It does not currently perform live retrieval, connect to student systems, or make autonomous eligibility decisions.</div>
+  </div>
+</section>
+
 <section id="requirements">
  <div class="wrap">
   <div class="section-title"><div class="eyebrow">04 • MVP Requirements</div><h2>Functional requirements with testable acceptance criteria.</h2><p>The MVP deliberately focuses on retrieval, evidence, verification, clarification, and escalation before considering workflow automation.</p></div>
@@ -165,6 +192,18 @@ footer{padding:30px 0;text-align:center;color:#756d67;font-size:.75rem;border-to
    <div class="card govern"><h3>Source lifecycle</h3><p>Future enterprise implementation would incorporate ownership, review schedules, superseded status, and access permissions.</p></div>
   </div>
  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">What I Would Build Next</div>
+    <h2>From portfolio prototype to controlled enterprise pilot.</h2>
+    <div class="build-grid">
+      <div class="build-card"><h3>Governed Retrieval</h3><p>Replace modeled answers with permission-aware RAG over approved content, including effective dates, source ownership, review status, and superseded-document controls.</p></div>
+      <div class="build-card"><h3>Advisor Workflow</h3><p>Add guided scenario inputs, role-based access, reusable decision paths, feedback capture, and escalation workflows for questions that require human judgment.</p></div>
+      <div class="build-card"><h3>Analytics & Governance</h3><p>Measure time-to-answer, citation validity, unresolved searches, content gaps, source conflicts, advisor helpfulness, adoption, and pilot-level operational impact.</p></div>
+    </div>
+  </div>
 </section>
 
 <section id="testing" class="paper">
