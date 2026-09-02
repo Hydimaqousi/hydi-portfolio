@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="LaunchReady, an independent simulated SaaS implementation and onboarding portfolio project by Hydi Maqousi.">
+  <title>LaunchReady | Hydi Maqousi Portfolio</title>
+  <style>
+    :root{--ink:#17324d;--blue:#2f75b5;--teal:#2a9d8f;--sky:#dceaf7;--paper:#fff;--soft:#f4f6f9;--line:#d7dee8;--muted:#5b6573;--amber:#fff2cc}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:#1f2937;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+    a{color:inherit}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+    .nav .wrap{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;color:var(--ink);text-decoration:none}.back{font-weight:800;color:var(--blue);text-decoration:none}
+    header{padding:84px 0 64px;background:linear-gradient(145deg,#eef5fb,#fff 58%,#e7f5f2)}.kicker{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;font-weight:900;color:var(--blue)}
+    h1{font-size:clamp(2.7rem,7vw,5.4rem);line-height:1;margin:.45rem 0 1.1rem;color:var(--ink);letter-spacing:-.045em}.lead{font-size:1.25rem;max-width:820px;color:var(--muted)}
+    .disclosure{margin-top:28px;background:var(--amber);border:1px solid #ead98b;border-radius:18px;padding:18px 20px;max-width:900px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;padding:12px 17px;border-radius:999px;text-decoration:none;font-weight:850;border:1px solid var(--ink)}.primary{background:var(--ink);color:white}.secondary{background:white;color:var(--ink)}
+    section{padding:76px 0}.soft{background:var(--soft)}h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;color:var(--ink);margin:0 0 18px;letter-spacing:-.03em}h3{color:var(--ink);font-size:1.3rem;margin:0 0 8px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:white;border:1px solid var(--line);border-radius:20px;padding:24px}.card p{margin:0;color:var(--muted)}
+    .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}.step{background:var(--ink);color:white;border-radius:18px;padding:22px;min-height:122px}.step b{display:block;color:#a9d4f5;font-size:.78rem;letter-spacing:.08em;margin-bottom:9px}
+    .shot{margin-top:26px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:white;box-shadow:0 18px 50px rgba(23,50,77,.1)}.shot img{display:block;width:100%;height:auto}.caption{padding:14px 18px;color:var(--muted);font-size:.9rem}
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}.metric{background:var(--ink);color:white;border-radius:18px;padding:24px}.metric strong{font-size:2.2rem;display:block}.metric span{color:#d6e5f3}
+    .artifact{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;border-top:1px solid var(--line);padding:22px 0}.artifact:first-child{border-top:0}.artifact p{margin:4px 0 0;color:var(--muted)}
+    footer{padding:34px 0;color:var(--muted);border-top:1px solid var(--line)}
+    @media(max-width:800px){.grid,.flow,.metrics{grid-template-columns:1fr}.artifact{grid-template-columns:1fr}.nav .wrap{height:62px}header{padding-top:55px}}
+  </style>
+</head>
+<body>
+  <nav class="nav"><div class="wrap"><a class="brand" href="../../index.html">HYDI MAQOUSI</a><a class="back" href="../../index.html#case-studies">← Back to portfolio</a></div></nav>
+  <header><div class="wrap">
+    <div class="kicker">Independent simulated SaaS implementation</div>
+    <h1>LaunchReady</h1>
+    <p class="lead">A complete implementation and onboarding case study showing how I translate discovery into requirements, coordinate delivery, validate data, manage UAT, prepare users, assess launch readiness, and measure adoption.</p>
+    <div class="disclosure"><strong>Portfolio disclosure:</strong> This is an independent simulated project. Northstar Community Services, LaunchReady, all customer data, metrics, stakeholders, defects, and results are fictional. It is not a real employer or customer engagement.</div>
+    <div class="actions"><a class="btn primary" href="LaunchReady_Case_Study.pdf" target="_blank" rel="noopener">Open Case Study PDF</a><a class="btn secondary" href="LaunchReady_Implementation_Workbook.xlsx">Download Workbook</a><a class="btn secondary" href="LaunchReady_Recruiter_Presentation.pptx">Download Presentation</a></div>
+  </div></header>
+
+  <section><div class="wrap"><div class="kicker">The challenge</div><h2>Replace fragmented onboarding with one controlled operating workflow.</h2>
+    <div class="grid"><div class="card"><h3>Customer</h3><p>A fictional 475-employee organization operating across eight locations and hiring approximately 25–35 employees per month.</p></div><div class="card"><h3>Problem</h3><p>Email requests, eight spreadsheets, disconnected checklists, missing information, unclear ownership, and limited reporting.</p></div><div class="card"><h3>Pilot decision</h3><p>Launch at two locations first, then use test evidence, support trends, and Day-30 measures to guide expansion.</p></div></div>
+  </div></section>
+
+  <section class="soft"><div class="wrap"><div class="kicker">Implementation lifecycle</div><h2>Every stage produces evidence for the next decision.</h2>
+    <div class="flow"><div class="step"><b>01</b>Discovery and current-state analysis</div><div class="step"><b>02</b>Requirements and traceability</div><div class="step"><b>03</b>Planning and stakeholder governance</div><div class="step"><b>04</b>Configuration and data readiness</div><div class="step"><b>05</b>UAT and defect management</div><div class="step"><b>06</b>Training and customer handoff</div><div class="step"><b>07</b>Go-live and hypercare</div><div class="step"><b>08</b>Measurement and Phase 2</div></div>
+    <div class="shot"><img src="assets/overview.png" alt="LaunchReady portfolio presentation overview"><div class="caption">Recruiter presentation: the end-to-end implementation story in ten slides.</div></div>
+  </div></section>
+
+  <section><div class="wrap"><div class="kicker">Data and testing</div><h2>The project uses intentional errors and defects to demonstrate real analysis.</h2>
+    <div class="grid"><div class="card"><h3>Data validation</h3><p>Invalid emails, duplicates, missing start dates and managers, inconsistent locations, and nonstandard dates are identified and corrected.</p></div><div class="card"><h3>UAT evidence</h3><p>Fifteen end-to-end scenarios connect requirements, expected results, actual results, defects, retests, and exit criteria.</p></div><div class="card"><h3>Launch governance</h3><p>The pilot proceeds with zero open critical/high defects and one accepted medium workaround.</p></div></div>
+    <div class="shot"><img src="assets/data-readiness.png" alt="LaunchReady sample data validation and mapping worksheet"><div class="caption">Sample customer data includes intentional errors so correction and validation decisions can be explained in an interview.</div></div>
+    <div class="shot"><img src="assets/uat-defects.png" alt="LaunchReady UAT test results and defect tracker"><div class="caption">UAT results: 14 of 15 scenarios passed, a 93% pass rate, with no open critical or high-severity defects.</div></div>
+  </div></section>
+
+  <section class="soft"><div class="wrap"><div class="kicker">Simulated measurement</div><h2>Success is defined before launch and reviewed after it.</h2>
+    <div class="metrics"><div class="metric"><strong>5.8 days</strong><span>Average completion time vs. 9-day baseline</span></div><div class="metric"><strong>12%</strong><span>Requests needing follow-up vs. 32% baseline</span></div><div class="metric"><strong>93%</strong><span>Pilot requests submitted through the platform</span></div><div class="metric"><strong>7%</strong><span>Missing first-day items vs. 21% baseline</span></div><div class="metric"><strong>5.4</strong><span>Internal emails per hire vs. 14 baseline</span></div><div class="metric"><strong>96%</strong><span>Required onboarding tasks completed</span></div></div>
+    <div class="shot"><img src="assets/dashboard.png" alt="LaunchReady executive implementation dashboard"><div class="caption">All displayed results are simulated and demonstrate measurement design; they are not claims from a production implementation.</div></div>
+  </div></section>
+
+  <section><div class="wrap"><div class="kicker">Project artifacts</div><h2>Review the work behind the story.</h2>
+    <div class="artifact"><div><h3>Case Study</h3><p>Fifteen-page narrative covering the customer, problem, process, governance, implementation, launch, and lessons learned.</p></div><a class="btn primary" href="LaunchReady_Case_Study.pdf" target="_blank" rel="noopener">Open PDF</a></div>
+    <div class="artifact"><div><h3>Implementation Workbook</h3><p>Sixteen editable tabs: discovery, requirements, traceability, stories, plan, RACI, RAID, decisions, configuration, data, UAT, enablement, launch, and measurement.</p></div><a class="btn secondary" href="LaunchReady_Implementation_Workbook.xlsx">Download XLSX</a></div>
+    <div class="artifact"><div><h3>Recruiter Presentation</h3><p>Ten-slide presentation designed for networking conversations and interview walkthroughs.</p></div><a class="btn secondary" href="LaunchReady_Recruiter_Presentation.pptx">Download PPTX</a></div>
+  </div></section>
+  <footer><div class="wrap">© 2026 Hydi Maqousi · Independent portfolio project</div></footer>
+</body>
+</html>
