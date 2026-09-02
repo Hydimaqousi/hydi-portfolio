@@ -1,64 +1,1279 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="LaunchReady, an independent simulated SaaS implementation and onboarding portfolio project by Hydi Maqousi.">
-  <title>LaunchReady | Hydi Maqousi Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Hydi Maqousi, a product-operations and project professional translating complex workflows into scalable systems through business analysis, AI-enabled process improvement, analytics, and cross-functional delivery.">
+  <meta name="author" content="Hydi Maqousi">
+  <meta name="theme-color" content="#102a56">
+  <meta property="og:title" content="Hydi Maqousi | Product Operations, Projects & AI Portfolio">
+  <meta property="og:description" content="Product operations, project delivery, AI-enabled process improvement, business analysis, and analytics — turning complex workflows into scalable systems.">
+  <meta property="og:type" content="website">
+  <title>Hydi Maqousi | Product Operations, Projects & AI Portfolio</title>
+
   <style>
-    :root{--ink:#17324d;--blue:#2f75b5;--teal:#2a9d8f;--sky:#dceaf7;--paper:#fff;--soft:#f4f6f9;--line:#d7dee8;--muted:#5b6573;--amber:#fff2cc}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:#1f2937;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
-    a{color:inherit}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
-    .nav .wrap{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;color:var(--ink);text-decoration:none}.back{font-weight:800;color:var(--blue);text-decoration:none}
-    header{padding:84px 0 64px;background:linear-gradient(145deg,#eef5fb,#fff 58%,#e7f5f2)}.kicker{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;font-weight:900;color:var(--blue)}
-    h1{font-size:clamp(2.7rem,7vw,5.4rem);line-height:1;margin:.45rem 0 1.1rem;color:var(--ink);letter-spacing:-.045em}.lead{font-size:1.25rem;max-width:820px;color:var(--muted)}
-    .disclosure{margin-top:28px;background:var(--amber);border:1px solid #ead98b;border-radius:18px;padding:18px 20px;max-width:900px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-    .btn{display:inline-flex;padding:12px 17px;border-radius:999px;text-decoration:none;font-weight:850;border:1px solid var(--ink)}.primary{background:var(--ink);color:white}.secondary{background:white;color:var(--ink)}
-    section{padding:76px 0}.soft{background:var(--soft)}h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;color:var(--ink);margin:0 0 18px;letter-spacing:-.03em}h3{color:var(--ink);font-size:1.3rem;margin:0 0 8px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:white;border:1px solid var(--line);border-radius:20px;padding:24px}.card p{margin:0;color:var(--muted)}
-    .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}.step{background:var(--ink);color:white;border-radius:18px;padding:22px;min-height:122px}.step b{display:block;color:#a9d4f5;font-size:.78rem;letter-spacing:.08em;margin-bottom:9px}
-    .shot{margin-top:26px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:white;box-shadow:0 18px 50px rgba(23,50,77,.1)}.shot img{display:block;width:100%;height:auto}.caption{padding:14px 18px;color:var(--muted);font-size:.9rem}
-    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}.metric{background:var(--ink);color:white;border-radius:18px;padding:24px}.metric strong{font-size:2.2rem;display:block}.metric span{color:#d6e5f3}
-    .artifact{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;border-top:1px solid var(--line);padding:22px 0}.artifact:first-child{border-top:0}.artifact p{margin:4px 0 0;color:var(--muted)}
-    footer{padding:34px 0;color:var(--muted);border-top:1px solid var(--line)}
-    @media(max-width:800px){.grid,.flow,.metrics{grid-template-columns:1fr}.artifact{grid-template-columns:1fr}.nav .wrap{height:62px}header{padding-top:55px}}
-  </style>
+    :root{
+      --espresso-950:#0b1730;
+      --espresso-900:#13264b;
+      --espresso-800:#1d3f72;
+      --espresso-700:#315b8f;
+      --taupe-700:#58697f;
+      --taupe-500:#7d8da1;
+      --taupe-300:#b9c6d6;
+      --stone-200:#dce5ef;
+      --stone-100:#edf3f8;
+      --cream:#f6f9fc;
+      --paper:#ffffff;
+      --ink:#152238;
+      --muted:#64748b;
+      --success:#17816d;
+      --shadow-sm:0 8px 24px rgba(18,38,75,.07);
+      --shadow-lg:0 24px 60px rgba(18,38,75,.13);
+      --radius-sm:14px;
+      --radius-md:22px;
+      --radius-lg:32px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth; scroll-padding-top:92px}
+    body{
+      margin:0;
+      background:var(--cream);
+      color:var(--ink);
+      font-family:Inter, "Segoe UI", Arial, sans-serif;
+      line-height:1.7;
+      text-rendering:optimizeLegibility;
+    }
+    body.menu-open{overflow:hidden}
+    a{color:inherit}
+    img{max-width:100%}
+    button,input,textarea{font:inherit}
+    .wrap{width:min(var(--max), calc(100% - 40px)); margin:auto}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(255,255,255,.90);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(185,198,214,.72);
+      transition:box-shadow .25s ease, background .25s ease;
+    }
+    .nav.scrolled{box-shadow:0 10px 30px rgba(18,38,75,.08); background:rgba(255,255,255,.97)}
+    .nav-inner{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .brand-lockup{
+      display:flex;
+      align-items:center;
+      gap:13px;
+      text-decoration:none;
+    }
+    .logo-mark{
+      width:46px;
+      height:46px;
+      border-radius:15px;
+      display:grid;
+      place-items:center;
+      color:white;
+      background:linear-gradient(145deg,var(--espresso-700),var(--espresso-950));
+      box-shadow:0 10px 25px rgba(18,38,75,.18);
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:700;
+      letter-spacing:-.08em;
+      font-size:1.23rem;
+      position:relative;
+      overflow:hidden;
+    }
+    .logo-mark::after{
+      content:"";
+      position:absolute;
+      inset:auto -10px -16px auto;
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      background:rgba(255,255,255,.10);
+    }
+    .brand-copy strong{
+      display:block;
+      letter-spacing:.12em;
+      color:var(--espresso-950);
+      font-size:.86rem;
+    }
+    .brand-copy span{
+      display:block;
+      color:var(--taupe-700);
+      font-size:.73rem;
+      margin-top:1px;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:23px;
+      font-size:.92rem;
+    }
+    .nav-links a{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:700;
+      position:relative;
+    }
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:100%;
+      bottom:-7px;
+      height:2px;
+      background:var(--espresso-700);
+      transition:right .22s ease;
+    }
+    .nav-links a:hover{color:var(--espresso-800)}
+    .nav-links a:hover::after{right:0}
+    .nav-cta{
+      padding:10px 16px;
+      border-radius:999px;
+      color:white !important;
+      background:var(--espresso-800);
+    }
+    .nav-cta::after{display:none}
+    .menu-btn{
+      display:none;
+      border:0;
+      background:transparent;
+      width:44px;height:44px;
+      border-radius:12px;
+      cursor:pointer;
+      color:var(--espresso-900);
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding:112px 0 92px;
+      background:
+        radial-gradient(circle at 79% 18%, rgba(57,174,183,.18), transparent 24%),
+        radial-gradient(circle at 12% 80%, rgba(94,116,222,.14), transparent 28%),
+        linear-gradient(145deg,#ffffff 0%,#eef4fb 100%);
+      border-bottom:1px solid var(--stone-200);
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:420px;height:420px;
+      border-radius:50%;
+      border:1px solid rgba(49,91,143,.10);
+      top:-165px;right:-90px;
+    }
+    .hero-grid{
+      position:relative;
+      display:grid;
+      grid-template-columns:minmax(0,1.25fr) minmax(310px,.75fr);
+      gap:68px;
+      align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      text-transform:uppercase;
+      letter-spacing:.19em;
+      font-size:.75rem;
+      font-weight:900;
+      color:var(--taupe-700);
+      margin-bottom:18px;
+    }
+    .eyebrow::before{content:"";width:32px;height:1px;background:var(--taupe-500)}
+    h1,h2,.serif{font-family:Georgia, "Times New Roman", serif}
+    h1{
+      margin:0;
+      font-size:clamp(3.5rem,7vw,6.7rem);
+      line-height:.94;
+      letter-spacing:-.055em;
+      color:var(--espresso-950);
+    }
+    .role{
+      margin:24px 0 4px;
+      font-size:clamp(1.18rem,2.4vw,1.75rem);
+      font-weight:800;
+      color:var(--espresso-700);
+    }
+    .tagline{
+      margin:0 0 26px;
+      color:var(--taupe-700);
+      font-family:Georgia, "Times New Roman", serif;
+      font-style:italic;
+      font-size:1.25rem;
+    }
+    .hero-copy{max-width:760px;color:var(--muted);font-size:1.08rem}
+    .buttons{display:flex;gap:13px;flex-wrap:wrap;margin-top:32px}
+    .btn{
+      min-height:49px;
+      padding:0 22px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      text-decoration:none;
+      font-weight:850;
+      border:1px solid transparent;
+      transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--espresso-800);color:white;box-shadow:0 12px 28px rgba(59,43,36,.18)}
+    .btn-primary:hover{background:var(--espresso-950);box-shadow:0 16px 32px rgba(59,43,36,.23)}
+    .btn-secondary{border-color:var(--espresso-700);color:var(--espresso-700);background:rgba(255,255,255,.45)}
+    .btn-secondary:hover{background:var(--stone-100)}
+    .btn-light{background:white;color:var(--espresso-900)}
+    .btn-light:hover{box-shadow:0 10px 25px rgba(0,0,0,.15)}
+
+
+    .credential-strip{
+      padding:20px 0;
+      background:var(--espresso-950);
+      color:white;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .credential-row{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:1px;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      overflow:hidden;
+    }
+    .credential{
+      background:var(--espresso-950);
+      padding:17px 18px;
+      min-height:88px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .credential strong{font-size:.9rem;line-height:1.35}
+    .credential span{font-size:.75rem;color:#d9cec7;margin-top:4px}
+    .status-pill{
+      display:inline-flex;
+      width:max-content;
+      margin-top:8px;
+      padding:3px 8px;
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:999px;
+      font-size:.67rem!important;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:white!important;
+    }
+    .credential-card .credential-meta{
+      color:var(--taupe-700);
+      font-size:.88rem;
+      font-weight:750;
+      margin-bottom:10px;
+    }
+    .credential-card p{margin-bottom:0}
+
+    .hero-panel{
+      border-radius:var(--radius-lg);
+      padding:35px;
+      color:white;
+      background:linear-gradient(155deg,var(--espresso-800),var(--espresso-950));
+      box-shadow:var(--shadow-lg);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-panel::after{
+      content:"HM";
+      position:absolute;
+      right:-5px;
+      bottom:-46px;
+      font:700 8rem/1 Georgia,serif;
+      color:rgba(255,255,255,.045);
+    }
+    .hero-panel h3{margin:0 0 12px;font:700 1.55rem/1.2 Georgia,serif}
+    .hero-panel p{color:#eee5df}
+    .mini-list{display:grid;gap:13px;margin-top:25px}
+    .mini-item{
+      display:flex;
+      gap:12px;
+      padding-top:13px;
+      border-top:1px solid rgba(255,255,255,.15);
+    }
+    .mini-dot{width:8px;height:8px;border-radius:50%;background:var(--taupe-300);margin-top:9px;flex:0 0 auto}
+
+    section{padding:90px 0}
+    .paper{background:var(--paper)}
+    .soft{background:var(--stone-100)}
+    .section-kicker{
+      text-transform:uppercase;
+      letter-spacing:.17em;
+      font-size:.75rem;
+      font-weight:900;
+      color:var(--taupe-700);
+      margin-bottom:10px;
+    }
+    h2{
+      margin:0 0 18px;
+      color:var(--espresso-950);
+      font-size:clamp(2.25rem,4.6vw,3.7rem);
+      line-height:1.06;
+      letter-spacing:-.025em;
+    }
+    .section-lead{max-width:800px;margin:0 0 38px;color:var(--muted);font-size:1.06rem}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .card{
+      background:var(--paper);
+      border:1px solid var(--stone-200);
+      border-radius:var(--radius-md);
+      padding:29px;
+      box-shadow:var(--shadow-sm);
+    }
+    .card h3{margin:0 0 11px;color:var(--espresso-800);font-size:1.18rem}
+    .card p:last-child{margin-bottom:0}
+    .dark-card{background:var(--espresso-950);color:white;border:0}
+    .dark-card h3{color:white}
+    .dark-card p{color:#eee5df}
+
+    .focus-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .focus-card{
+      background:var(--paper);
+      border:1px solid var(--stone-200);
+      border-radius:20px;
+      padding:25px;
+      min-height:225px;
+      transition:transform .22s ease,box-shadow .22s ease;
+    }
+    .focus-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm)}
+    .focus-number{font:700 2.2rem/1 Georgia,serif;color:var(--taupe-300);margin-bottom:16px}
+    .focus-card h3{margin:0 0 12px;color:var(--espresso-900)}
+    .focus-card ul{padding-left:18px;margin:0;color:var(--muted)}
+
+    .metrics{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+    .metric{
+      text-align:center;
+      background:var(--paper);
+      border:1px solid var(--stone-200);
+      border-radius:18px;
+      padding:25px 12px;
+    }
+    .metric strong{display:block;font:700 2.05rem/1 Georgia,serif;color:var(--espresso-700);margin-bottom:9px}
+    .metric span{font-size:.88rem;color:var(--muted)}
+
+    .timeline{position:relative;display:grid;gap:24px}
+    .timeline::before{
+      content:"";
+      position:absolute;
+      top:8px;
+      bottom:8px;
+      left:20px;
+      width:2px;
+      background:linear-gradient(var(--taupe-300),var(--stone-200));
+    }
+    .timeline-item{
+      position:relative;
+      padding-left:62px;
+    }
+    .timeline-dot{
+      position:absolute;
+      left:10px;
+      top:27px;
+      width:22px;height:22px;
+      border-radius:50%;
+      background:var(--espresso-700);
+      border:5px solid var(--stone-100);
+      box-shadow:0 0 0 1px var(--taupe-300);
+      z-index:2;
+    }
+    .role-card{
+      display:grid;
+      grid-template-columns:290px 1fr;
+      gap:30px;
+      background:var(--paper);
+      border:1px solid var(--stone-200);
+      border-radius:var(--radius-md);
+      padding:30px;
+      box-shadow:var(--shadow-sm);
+    }
+    .role-card h3{margin:0;color:var(--espresso-950);font-size:1.15rem}
+    .role-meta{color:var(--espresso-700);font-weight:850;margin-top:5px}
+    .role-date{color:var(--taupe-700);font-size:.92rem;margin-top:2px}
+    .role-card p{margin-top:0;color:var(--muted)}
+    .role-card ul{margin:0;padding-left:20px}
+    .role-card li+li{margin-top:7px}
+
+    .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .case{
+      background:var(--paper);
+      border:1px solid var(--stone-200);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:var(--shadow-sm);
+      display:flex;
+      flex-direction:column;
+    }
+    .case-top{
+      padding:25px;
+      background:linear-gradient(145deg,#e8dfd9,#f7f3ef);
+      border-bottom:1px solid var(--stone-200);
+    }
+    .case-label{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(59,43,36,.09);
+      color:var(--espresso-700);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-size:.73rem;
+      font-weight:900;
+    }
+    .case-body{padding:25px;display:flex;flex-direction:column;flex:1}
+    .case h3{margin:0 0 11px;color:var(--espresso-950);font-size:1.18rem}
+    .case h4{margin:18px 0 5px;color:var(--espresso-700);font-size:.82rem;text-transform:uppercase;letter-spacing:.09em}
+    .case p{margin:0;color:var(--muted)}
+
+    .case.featured{
+      grid-column:1/-1;
+      display:grid;
+      grid-template-columns:minmax(260px,.72fr) minmax(0,1.28fr);
+      min-height:350px;
+      border-color:#cfc6ee;
+      box-shadow:0 24px 60px rgba(62,55,102,.13);
+    }
+    .case.featured .case-top{
+      min-height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      background:
+        radial-gradient(circle at 78% 20%,rgba(53,189,197,.24),transparent 27%),
+        radial-gradient(circle at 20% 82%,rgba(125,114,255,.28),transparent 29%),
+        linear-gradient(145deg,#102a56 0%,#214f83 58%,#1f6d7a 100%);
+      color:white;
+      border:0;
+      padding:30px;
+    }
+    .case.featured .case-label{background:rgba(255,255,255,.12);color:white}
+    .feature-mark{width:72px;height:72px;border-radius:22px;background:linear-gradient(135deg,#5865e8,#34b7c5);display:grid;place-items:center;font-weight:950;font-size:1.25rem;box-shadow:0 14px 35px rgba(53,189,197,.22)}
+    .feature-copy{color:#d9e4f4;font-size:.9rem;line-height:1.6}
+    .case.featured .case-body{padding:32px}
+    .case.featured h3{font-size:1.55rem}
+    .project-tags{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}
+    .project-tags span{padding:6px 9px;border-radius:999px;background:#eef3ff;color:#4459a8;font-size:.72rem;font-weight:850}
+    .project-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+    .project-actions a{display:inline-flex;text-decoration:none;font-weight:850;border-radius:999px;padding:10px 14px;border:1px solid var(--espresso-700)}
+    .project-actions .project-primary{background:var(--espresso-800);color:white}
+    .project-actions .project-secondary{color:var(--espresso-800);background:white}
+
+
+    .project-actions .project-secondary:last-child{
+      border-color:#34a9b5;
+      color:#1d5d72;
+      background:#f4fbfc;
+    }
+    .project-actions .project-secondary:last-child:hover{
+      background:#e8f7f8;
+      transform:translateY(-1px);
+    }
+
+    .case-result{
+      margin-top:auto;
+      padding-top:20px;
+    }
+    .result-box{
+      border-left:4px solid var(--success);
+      background:#eef8f5;
+      padding:14px 15px;
+      border-radius:0 12px 12px 0;
+      color:#2f665d;
+      font-size:.94rem;
+    }
+
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .process-step{
+      position:relative;
+      border:1px solid var(--stone-200);
+      border-radius:18px;
+      background:var(--paper);
+      padding:27px;
+    }
+    .process-step:not(:last-child)::after{
+      content:"→";
+      position:absolute;
+      right:-15px;
+      top:50%;
+      transform:translateY(-50%);
+      color:var(--taupe-500);
+      font-size:1.6rem;
+      z-index:2;
+    }
+    .process-step b{display:block;color:var(--espresso-950);font-size:1.08rem;margin-bottom:7px}
+    .process-step span{color:var(--muted)}
+
+    .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+    .tag{
+      border:1px solid #cfdaea;
+      background:#eef4fb;
+      color:var(--espresso-700);
+      border-radius:999px;
+      padding:7px 12px;
+      font-size:.86rem;
+      font-weight:780;
+    }
+
+    .targets{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:17px;
+    }
+    .target{
+      border:1px solid var(--stone-200);
+      border-radius:17px;
+      background:var(--paper);
+      padding:22px;
+      color:var(--espresso-800);
+      font-weight:800;
+      text-align:center;
+    }
+
+    .cta{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:30px;
+      align-items:center;
+      padding:48px;
+      color:white;
+      background:linear-gradient(145deg,var(--espresso-700),var(--espresso-950));
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow-lg);
+    }
+    .cta h2{color:white;margin-bottom:10px}
+    .cta p{max-width:740px;margin:0;color:#eee5df}
+    .contact-list{display:flex;flex-wrap:wrap;gap:16px 24px;margin-top:24px;color:#f2eae5;font-weight:750}
+
+    footer{
+      background:var(--paper);
+      border-top:1px solid var(--stone-200);
+      color:var(--muted);
+      padding:34px 0;
+      text-align:center;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .7s ease,transform .7s ease;
+    }
+    .reveal.visible{opacity:1;transform:none}
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation:none!important;transition:none!important}
+      .reveal{opacity:1;transform:none}
+    }
+
+    @media(max-width:1000px){
+      .hero-grid,.two-col,.cta{grid-template-columns:1fr}
+      .focus-grid,.process{grid-template-columns:repeat(2,1fr)}
+      .metrics{grid-template-columns:repeat(3,1fr)}
+      .case-grid,.skill-grid,.targets,.credential-row{grid-template-columns:1fr}
+      .case.featured{grid-template-columns:1fr}
+      .role-card{grid-template-columns:1fr}
+      .process-step:not(:last-child)::after{display:none}
+    }
+    @media(max-width:780px){
+      .menu-btn{display:grid;place-items:center}
+      .nav-links{
+        display:none;
+        position:fixed;
+        inset:78px 0 auto 0;
+        background:var(--paper);
+        border-bottom:1px solid var(--stone-200);
+        padding:24px 20px 30px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:18px;
+        box-shadow:0 22px 35px rgba(48,34,29,.12);
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{font-size:1rem}
+      .focus-grid,.process,.metrics{grid-template-columns:1fr}
+      .hero{padding:78px 0 70px}
+      section{padding:72px 0}
+      .wrap{width:min(var(--max), calc(100% - 28px))}
+      .timeline::before{left:13px}
+      .timeline-item{padding-left:44px}
+      .timeline-dot{left:3px}
+      .cta{padding:34px 24px}
+    }
+  
+    @media(max-width:620px){
+      .featured-project h3{font-size:1.62rem !important;line-height:1.18 !important;letter-spacing:-.025em}
+    }
+
+</style>
 </head>
+
 <body>
-  <nav class="nav"><div class="wrap"><a class="brand" href="../../index.html">HYDI MAQOUSI</a><a class="back" href="../../index.html#case-studies">← Back to portfolio</a></div></nav>
-  <header><div class="wrap">
-    <div class="kicker">Independent simulated SaaS implementation</div>
-    <h1>LaunchReady</h1>
-    <p class="lead">A complete implementation and onboarding case study showing how I translate discovery into requirements, coordinate delivery, validate data, manage UAT, prepare users, assess launch readiness, and measure adoption.</p>
-    <div class="disclosure"><strong>Portfolio disclosure:</strong> This is an independent simulated project. Northstar Community Services, LaunchReady, all customer data, metrics, stakeholders, defects, and results are fictional. It is not a real employer or customer engagement.</div>
-    <div class="actions"><a class="btn primary" href="LaunchReady_Case_Study.pdf" target="_blank" rel="noopener">Open Case Study PDF</a><a class="btn secondary" href="LaunchReady_Implementation_Workbook.xlsx">Download Workbook</a><a class="btn secondary" href="LaunchReady_Recruiter_Presentation.pptx">Download Presentation</a></div>
-  </div></header>
+  <nav class="nav" id="topNav">
+    <div class="wrap nav-inner">
+      <a class="brand-lockup" href="#top" aria-label="Hydi Maqousi home">
+        <div class="logo-mark" aria-hidden="true">HM</div>
+        <div class="brand-copy">
+          <strong>HYDI MAQOUSI</strong>
+          <span>Turning complex operations into scalable systems.</span>
+        </div>
+      </a>
 
-  <section><div class="wrap"><div class="kicker">The challenge</div><h2>Replace fragmented onboarding with one controlled operating workflow.</h2>
-    <div class="grid"><div class="card"><h3>Customer</h3><p>A fictional 475-employee organization operating across eight locations and hiring approximately 25–35 employees per month.</p></div><div class="card"><h3>Problem</h3><p>Email requests, eight spreadsheets, disconnected checklists, missing information, unclear ownership, and limited reporting.</p></div><div class="card"><h3>Pilot decision</h3><p>Launch at two locations first, then use test evidence, support trends, and Day-30 measures to guide expansion.</p></div></div>
-  </div></section>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation">
+        <span aria-hidden="true">☰</span>
+      </button>
 
-  <section class="soft"><div class="wrap"><div class="kicker">Implementation lifecycle</div><h2>Every stage produces evidence for the next decision.</h2>
-    <div class="flow"><div class="step"><b>01</b>Discovery and current-state analysis</div><div class="step"><b>02</b>Requirements and traceability</div><div class="step"><b>03</b>Planning and stakeholder governance</div><div class="step"><b>04</b>Configuration and data readiness</div><div class="step"><b>05</b>UAT and defect management</div><div class="step"><b>06</b>Training and customer handoff</div><div class="step"><b>07</b>Go-live and hypercare</div><div class="step"><b>08</b>Measurement and Phase 2</div></div>
-    <div class="shot"><img src="assets/overview.png" alt="LaunchReady portfolio presentation overview"><div class="caption">Recruiter presentation: the end-to-end implementation story in ten slides.</div></div>
-  </div></section>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#impact">Impact</a>
+        <a href="#learning">Education & Credentials</a>
+        <a class="nav-cta" href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-  <section><div class="wrap"><div class="kicker">Data and testing</div><h2>The project uses intentional errors and defects to demonstrate real analysis.</h2>
-    <div class="grid"><div class="card"><h3>Data validation</h3><p>Invalid emails, duplicates, missing start dates and managers, inconsistent locations, and nonstandard dates are identified and corrected.</p></div><div class="card"><h3>UAT evidence</h3><p>Fifteen end-to-end scenarios connect requirements, expected results, actual results, defects, retests, and exit criteria.</p></div><div class="card"><h3>Launch governance</h3><p>The pilot proceeds with zero open critical/high defects and one accepted medium workaround.</p></div></div>
-    <div class="shot"><img src="assets/data-readiness.png" alt="LaunchReady sample data validation and mapping worksheet"><div class="caption">Sample customer data includes intentional errors so correction and validation decisions can be explained in an interview.</div></div>
-    <div class="shot"><img src="assets/uat-defects.png" alt="LaunchReady UAT test results and defect tracker"><div class="caption">UAT results: 14 of 15 scenarios passed, a 93% pass rate, with no open critical or high-severity defects.</div></div>
-  </div></section>
+  <header class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <div class="eyebrow">Product Operations • Project Delivery • AI • Analytics</div>
+        <h1>Hydi<br>Maqousi</h1>
+        <div class="role">Product Operations & Project Management Professional</div>
+        <p class="tagline">Turning complex operations into scalable systems.</p>
+        <p class="hero-copy">
+          I bridge frontline operational knowledge with project execution, product thinking, business analysis,
+          analytics, and applied AI. I identify friction, organize ambiguity, design practical solutions, and help
+          teams move from recurring problems to clearer, more scalable ways of working.
+        </p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="Hydi_Maqousi_Resume.pdf" download>Download Resume</a>
+          <a class="btn btn-secondary" href="#case-studies">View Case Studies</a>
+          <a class="btn btn-secondary" href="#contact">Contact Me</a>
+        </div>
+      </div>
 
-  <section class="soft"><div class="wrap"><div class="kicker">Simulated measurement</div><h2>Success is defined before launch and reviewed after it.</h2>
-    <div class="metrics"><div class="metric"><strong>5.8 days</strong><span>Average completion time vs. 9-day baseline</span></div><div class="metric"><strong>12%</strong><span>Requests needing follow-up vs. 32% baseline</span></div><div class="metric"><strong>93%</strong><span>Pilot requests submitted through the platform</span></div><div class="metric"><strong>7%</strong><span>Missing first-day items vs. 21% baseline</span></div><div class="metric"><strong>5.4</strong><span>Internal emails per hire vs. 14 baseline</span></div><div class="metric"><strong>96%</strong><span>Required onboarding tasks completed</span></div></div>
-    <div class="shot"><img src="assets/dashboard.png" alt="LaunchReady executive implementation dashboard"><div class="caption">All displayed results are simulated and demonstrate measurement design; they are not claims from a production implementation.</div></div>
-  </div></section>
+      <aside class="hero-panel reveal">
+        <h3>Where I Create Value</h3>
+        <p>
+          I bring the perspective of someone who understands the work at the frontline and can translate that
+          knowledge into requirements, workflows, project plans, decision-support tools, and measurable improvements.
+        </p>
+        <div class="mini-list">
+          <div class="mini-item"><span class="mini-dot"></span><span>Operational discovery, workflow redesign, and process improvement</span></div>
+          <div class="mini-item"><span class="mini-dot"></span><span>Business analysis, requirements, and root-cause research</span></div>
+          <div class="mini-item"><span class="mini-dot"></span><span>Cross-functional project coordination and stakeholder communication</span></div>
+          <div class="mini-item"><span class="mini-dot"></span><span>AI-enabled knowledge, decision support, and responsible automation concepts</span></div>
+          <div class="mini-item"><span class="mini-dot"></span><span>Analytics, reporting, and measurable continuous improvement</span></div>
+        </div>
+      </aside>
+    </div>
+  </header>
 
-  <section><div class="wrap"><div class="kicker">Project artifacts</div><h2>Review the work behind the story.</h2>
-    <div class="artifact"><div><h3>Case Study</h3><p>Fifteen-page narrative covering the customer, problem, process, governance, implementation, launch, and lessons learned.</p></div><a class="btn primary" href="LaunchReady_Case_Study.pdf" target="_blank" rel="noopener">Open PDF</a></div>
-    <div class="artifact"><div><h3>Implementation Workbook</h3><p>Sixteen editable tabs: discovery, requirements, traceability, stories, plan, RACI, RAID, decisions, configuration, data, UAT, enablement, launch, and measurement.</p></div><a class="btn secondary" href="LaunchReady_Implementation_Workbook.xlsx">Download XLSX</a></div>
-    <div class="artifact"><div><h3>Recruiter Presentation</h3><p>Ten-slide presentation designed for networking conversations and interview walkthroughs.</p></div><a class="btn secondary" href="LaunchReady_Recruiter_Presentation.pptx">Download PPTX</a></div>
-  </div></section>
-  <footer><div class="wrap">© 2026 Hydi Maqousi · Independent portfolio project</div></footer>
+  <section class="credential-strip" aria-label="Current education and professional credentials">
+    <div class="wrap credential-row">
+      <div class="credential">
+        <strong>M.S. Information Technology — Product Management</strong>
+        <span>Western Governors University</span>
+        <span class="status-pill">In Progress</span>
+      </div>
+      <div class="credential">
+        <strong>Google AI Professional Certificate</strong>
+        <span>Google • Earned August 2026</span>
+        <span class="status-pill">Completed</span>
+      </div>
+      <div class="credential">
+        <strong>Google Project Management Professional Certificate</strong>
+        <span>Google</span>
+        <span class="status-pill">Completed</span>
+      </div>
+      <div class="credential">
+        <strong>Microsoft Power BI Data Analyst Professional Certificate</strong>
+        <span>Microsoft</span>
+        <span class="status-pill">In Progress</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="about" class="paper">
+      <div class="wrap">
+        <div class="section-kicker reveal">Meet Hydi</div>
+        <h2 class="reveal">Curiosity shapes how I work.</h2>
+        <p class="section-lead reveal">
+          My experience spans higher education, healthcare, nonprofit administration, and laboratory operations.
+          I am now expanding that foundation through graduate study in IT product management and professional training
+          in project management, artificial intelligence, and business intelligence. Across every environment, I focus
+          on understanding the problem, connecting the right information, and improving how work gets done.
+        </p>
+
+        <div class="two-col">
+          <article class="card reveal">
+            <h3>About Me</h3>
+            <p>
+              Whether I am researching a complex financial scenario, coordinating information across departments,
+              supporting executive reporting, or improving documentation, I begin by understanding the full picture.
+              I enjoy asking thoughtful questions, learning new systems, identifying patterns, and translating complicated information into practical next steps.
+            </p>
+          </article>
+          <article class="card dark-card reveal">
+            <h3>Professional Philosophy</h3>
+            <p>
+              I believe every complex problem becomes more manageable when the right information is connected.
+              My goal is not only to complete the work, but to improve how the work is understood, documented,
+              communicated, and delivered.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft">
+      <div class="wrap">
+        <div class="section-kicker reveal">How I Work</div>
+        <h2 class="reveal">From operational friction to measurable improvement.</h2>
+        <p class="section-lead reveal">
+          My approach combines the discipline of project management with the curiosity of business analysis and the
+          practicality of frontline operations. I focus on solutions that people can actually adopt, verify, and improve.
+        </p>
+        <div class="focus-grid">
+          <article class="focus-card reveal"><div class="focus-number">01</div><h3>Discover</h3><ul><li>Listen to users and stakeholders</li><li>Map the current workflow</li><li>Identify friction and recurring questions</li></ul></article>
+          <article class="focus-card reveal"><div class="focus-number">02</div><h3>Diagnose</h3><ul><li>Research root causes</li><li>Clarify requirements and constraints</li><li>Separate symptoms from the core problem</li></ul></article>
+          <article class="focus-card reveal"><div class="focus-number">03</div><h3>Design & Deliver</h3><ul><li>Translate needs into practical solutions</li><li>Coordinate stakeholders and execution</li><li>Prototype, test, document, and iterate</li></ul></article>
+          <article class="focus-card reveal"><div class="focus-number">04</div><h3>Measure</h3><ul><li>Define success metrics</li><li>Capture user feedback</li><li>Use data to improve the next version</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper">
+      <div class="wrap">
+        <div class="section-kicker reveal">Capabilities</div>
+        <h2 class="reveal">Capabilities I can bring to a growing team.</h2>
+        <div class="focus-grid">
+          <article class="focus-card reveal">
+            <div class="focus-number">01</div>
+            <h3>Product & Operations</h3>
+            <ul>
+              <li>Process improvement</li>
+              <li>Workflow optimization</li>
+              <li>Operational documentation</li>
+              <li>Compliance support</li>
+            </ul>
+          </article>
+          <article class="focus-card reveal">
+            <div class="focus-number">02</div>
+            <h3>Business Analysis</h3>
+            <ul>
+              <li>Business analysis</li>
+              <li>Root-cause investigation</li>
+              <li>Cross-system research</li>
+              <li>Decision support</li>
+            </ul>
+          </article>
+          <article class="focus-card reveal">
+            <div class="focus-number">03</div>
+            <h3>Project Delivery</h3>
+            <ul>
+              <li>Cross-functional coordination</li>
+              <li>Stakeholder communication</li>
+              <li>Training and mentoring</li>
+              <li>Knowledge sharing</li>
+            </ul>
+          </article>
+          <article class="focus-card reveal">
+            <div class="focus-number">04</div>
+            <h3>AI & Analytics</h3>
+            <ul>
+              <li>Enterprise systems & digital workflows</li>
+              <li>Microsoft 365 & Power BI</li>
+              <li>Applied AI & prompt-driven productivity</li>
+              <li>Data analysis & reporting</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact" class="soft">
+      <div class="wrap">
+        <div class="section-kicker reveal">Evidence of Impact</div>
+        <h2 class="reveal">Experience supported by measurable work.</h2>
+        <div class="metrics">
+          <div class="metric reveal"><strong>3,000+</strong><span>Complex cases completed</span></div>
+          <div class="metric reveal"><strong>146</strong><span>Five-star surveys</span></div>
+          <div class="metric reveal"><strong>692</strong><span>Financial engagements</span></div>
+          <div class="metric reveal"><strong>5,000+</strong><span>Sponsorship records</span></div>
+          <div class="metric reveal"><strong>4</strong><span>Industries supported</span></div>
+          <div class="metric reveal"><strong>2</strong><span>Languages spoken</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="paper">
+      <div class="wrap">
+        <div class="section-kicker reveal">Career Timeline</div>
+        <h2 class="reveal">Experience across complex operating environments.</h2>
+        <p class="section-lead reveal">
+          My career has developed through roles that require accuracy, sound judgment, policy interpretation,
+          strong documentation, service awareness, and the ability to coordinate information across people and systems.
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <article class="role-card">
+              <div>
+                <h3>University of Maryland Global Campus</h3>
+                <div class="role-meta">Financial Solution Advisor</div>
+                <div class="role-date">January 2024 – Present</div>
+              </div>
+              <div>
+                <p>
+                  Research and resolve complex student financial scenarios involving financial aid, billing,
+                  military education benefits, employer tuition assistance, payment planning, and account discrepancies.
+                </p>
+                <ul>
+                  <li>Analyze information across Salesforce, Workday, PeopleSoft, OnBase, Verint, Five9, and related systems.</li>
+                  <li>Interpret institutional procedures and federal requirements to support accurate, compliant decisions.</li>
+                  <li>Coordinate with Financial Aid, Registrar, Advising, Student Accounts, Admissions, and Military Education.</li>
+                  <li>Manage high-volume casework while maintaining documentation quality, accuracy, and service standards.</li>
+                  <li>Train newly hired advisors, share operational knowledge, and contribute workflow recommendations.</li>
+                  <li>Support policy and process updates, including FAFSA Simplification initiatives.</li>
+                  <li>Use AI-assisted tools responsibly for research, organization, and communication while validating outputs.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <article class="role-card">
+              <div>
+                <h3>Saxon Internal Medicine</h3>
+                <div class="role-meta">Medical Receptionist</div>
+                <div class="role-date">October 2023 – January 2024</div>
+              </div>
+              <div>
+                <p>
+                  Coordinated front-office operations in a high-volume clinical environment serving approximately 50 patients daily.
+                </p>
+                <ul>
+                  <li>Managed scheduling, provider calendars, insurance verification, payments, registration, and electronic medical records.</li>
+                  <li>Maintained documentation accuracy, confidentiality, and communication across patients and clinical staff.</li>
+                  <li>Used eClinicalWorks to support organized records and reliable patient workflows.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <article class="role-card">
+              <div>
+                <h3>Helping Hand for Relief and Development</h3>
+                <div class="role-meta">Volunteer Executive Assistant</div>
+                <div class="role-date">February 2023 – October 2023</div>
+              </div>
+              <div>
+                <p>
+                  Supported executive leadership through reporting, administrative coordination,
+                  international logistics, project support, and Arabic-English translation.
+                </p>
+                <ul>
+                  <li>Managed documentation and tracking related to more than 5,000 orphan sponsorship records.</li>
+                  <li>Prepared reports, spreadsheets, and organized information to support leadership decision-making.</li>
+                  <li>Coordinated international humanitarian team logistics and professional communications.</li>
+                  <li>Helped maintain continuity and administrative coverage during a maternity-leave assignment.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <article class="role-card">
+              <div>
+                <h3>DaVita Laboratories</h3>
+                <div class="role-meta">Clinical Support I</div>
+                <div class="role-date">January 2022 – August 2022</div>
+              </div>
+              <div>
+                <p>
+                  Supported quality laboratory operations through specimen processing, documentation review,
+                  workflow coordination, and compliance with regulated procedures.
+                </p>
+                <ul>
+                  <li>Verified labeling, documentation, and chain-of-custody requirements.</li>
+                  <li>Coordinated specimen routing and helped resolve documentation issues.</li>
+                  <li>Maintained accuracy and quality standards in a regulated healthcare environment.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="case-studies" class="soft">
+      <div class="wrap">
+        <div class="section-kicker reveal">Selected Case Studies</div>
+        <h2 class="reveal">How I approach real operational challenges.</h2>
+        <p class="section-lead reveal">
+          My case studies show how I move beyond task execution: I define the problem, connect stakeholders and information,
+          design a workable approach, document decisions, and think about how the solution can scale.
+        </p>
+
+        <div class="case-grid">
+
+          <article class="case featured reveal">
+            <div class="case-top">
+              <div><span class="case-label">Featured Product Project</span></div>
+              <div class="feature-mark">AI</div>
+              <div class="feature-copy">
+                Independent product concept using public Federal Student Aid and institutional guidance to demonstrate source-grounded AI, decision support, governance, UX, and product strategy.
+              </div>
+            </div>
+            <div class="case-body">
+              <h3>OpsGuide AI — Source-Grounded Decision Support for Financial Aid Operations</h3>
+              <p style="font-weight:800;color:#315b8f;margin:.25rem 0 .65rem">Concept Creator · Product & Project Lead</p>
+              <p style="margin:.1rem 0 1rem;color:#64748b">Designed to reduce search friction, strengthen source verification, and support more consistent advisor decision-making.</p>
+              <div class="project-tags">
+                <span>Product Management</span><span>Applied AI</span><span>Business Analysis</span><span>Process Improvement</span><span>UX</span><span>Knowledge Management</span>
+              </div>
+              <h4>Why It Matters</h4>
+              <p>When guidance is fragmented, advisors spend time searching instead of resolving work, new hires depend heavily on senior staff, and inconsistent interpretation can create operational risk.</p>
+              <h4>Problem</h4>
+              <p>Employees can lose time searching across fragmented policies, job aids, presentations, FAQs, and training resources simply to determine where authoritative guidance lives.</p>
+              <h4>Product Approach</h4>
+              <p>I translated the operational pain point into an advisor-focused MVP with natural-language retrieval, source hierarchy, transparent calculations, effective-date awareness, clarification for missing inputs, conflict handling, human escalation, and measurable pilot targets.</p>
+              <div class="case-result">
+                <div class="result-box"><strong>Current output:</strong> Interactive V0.5 prototype + product strategy + advisor scenarios + transparent calculations + source-governance model + UAT concepts + pilot success measures + roadmap.</div>
+              </div>
+              <div class="project-actions">
+                <a class="project-primary" href="projects/opsguide-ai/index.html">Launch Interactive Prototype</a>
+                <a class="project-secondary" href="projects/opsguide-ai/case-study.html">View Product Case Study</a>
+                <a class="project-secondary" href="projects/opsguide-ai/OpsGuide_AI_Business_Case.pdf" target="_blank" rel="noopener">View Business Case</a>
+              </div>
+            </div>
+          </article>
+          <article class="case featured reveal">
+            <div class="case-top">
+              <div><span class="case-label">Featured Implementation Project</span></div>
+              <div class="feature-mark">LR</div>
+              <div class="feature-copy">
+                Independent simulated SaaS implementation demonstrating requirements analysis, implementation planning, data validation, UAT, enablement, launch readiness, and post-launch measurement.
+              </div>
+            </div>
+            <div class="case-body">
+              <h3>LaunchReady — SaaS Implementation &amp; Onboarding</h3>
+              <p style="font-weight:800;color:#315b8f;margin:.25rem 0 .65rem">Implementation Project Lead · Implementation Analyst</p>
+              <p style="margin:.1rem 0 1rem;color:#64748b">Designed a defensible two-location pilot for a fictional 475-employee organization replacing fragmented email and spreadsheet onboarding.</p>
+              <div class="project-tags">
+                <span>SaaS Implementation</span><span>Business Analysis</span><span>Requirements</span><span>Data Validation</span><span>UAT</span><span>Enablement</span><span>Product Operations</span>
+              </div>
+              <h4>Why It Matters</h4>
+              <p>Implementation teams need more than a project plan. They need traceable requirements, clean customer data, test evidence, clear ownership, user readiness, and measurable launch criteria.</p>
+              <h4>Project Approach</h4>
+              <p>I moved the simulated customer through discovery, current- and future-state design, formal requirements, an eight-week pilot plan, configuration rules, data cleanup, UAT and defect tracking, training, go-live governance, hypercare, and a 30-day review.</p>
+              <div class="case-result">
+                <div class="result-box"><strong>Current output:</strong> 15-page case study + 16-tab implementation workbook + 10-slide recruiter presentation + simulated launch dashboard and Day-30 measurement model.</div>
+              </div>
+              <div class="project-actions">
+                <a class="project-primary" href="projects/launchready/index.html">View Implementation Case Study</a>
+                <a class="project-secondary" href="projects/launchready/LaunchReady_Case_Study.pdf" target="_blank" rel="noopener">Open Case Study PDF</a>
+                <a class="project-secondary" href="projects/launchready/LaunchReady_Implementation_Workbook.xlsx">Download Workbook</a>
+              </div>
+            </div>
+          </article>
+          <article class="case reveal">
+            <div class="case-top"><span class="case-label">Higher Education Operations</span></div>
+            <div class="case-body">
+              <h3>Resolving a Multi-System Student Account Issue</h3>
+              <h4>Situation</h4>
+              <p>A student account contained conflicting financial aid, billing, and documentation information across multiple systems.</p>
+              <h4>Analysis</h4>
+              <p>I reviewed the full account history, compared system records, checked policy requirements, and separated the primary issue from secondary account effects.</p>
+              <h4>Action</h4>
+              <p>I identified missing information, documented findings clearly, coordinated with the responsible departments, and communicated a realistic sequence of next steps.</p>
+              <div class="case-result">
+                <div class="result-box"><strong>Result:</strong> A clearer resolution path, stronger documentation continuity, and reduced risk of repeated or conflicting guidance.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case-top"><span class="case-label">Process Improvement</span></div>
+            <div class="case-body">
+              <h3>Strengthening Workflow Consistency</h3>
+              <h4>Situation</h4>
+              <p>Recurring questions and process changes created opportunities for inconsistent handling and longer resolution time.</p>
+              <h4>Analysis</h4>
+              <p>I observed repeated issues, grouped common problem patterns, and reviewed the documentation and system steps that advisors needed most often.</p>
+              <h4>Action</h4>
+              <p>I clarified practical steps, shared operational knowledge, supported newly hired advisors, and offered recommendations for stronger workflow consistency.</p>
+              <div class="case-result">
+                <div class="result-box"><strong>Result:</strong> Easier onboarding, clearer handling of repeat scenarios, stronger knowledge sharing, and better process continuity.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case-top"><span class="case-label">Humanitarian Administration</span></div>
+            <div class="case-body">
+              <h3>Organizing High-Volume Sponsorship Records</h3>
+              <h4>Situation</h4>
+              <p>Thousands of sponsorship records required organized tracking, reporting, reliable communication, and coordination across international work.</p>
+              <h4>Analysis</h4>
+              <p>I reviewed information needs, reporting expectations, language requirements, and the operational importance of consistent records.</p>
+              <h4>Action</h4>
+              <p>I maintained structured spreadsheets and reports, supported executive information needs, coordinated logistics, and translated communications between Arabic and English.</p>
+              <div class="case-result">
+                <div class="result-box"><strong>Result:</strong> Better access to organized information and more reliable coordination across leadership and humanitarian teams.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case-top"><span class="case-label">Compliance & Documentation</span></div>
+            <div class="case-body">
+              <h3>Improving Documentation Quality</h3>
+              <h4>Situation</h4>
+              <p>Complex cases required clear documentation so that other teams could understand prior research, decisions, and pending actions.</p>
+              <h4>Analysis</h4>
+              <p>I considered what information another employee would need to continue the work accurately without repeating the same investigation.</p>
+              <h4>Action</h4>
+              <p>I organized case notes around the issue, evidence reviewed, policy considered, action taken, and next responsible step.</p>
+              <div class="case-result">
+                <div class="result-box"><strong>Result:</strong> Stronger case continuity, clearer internal communication, and improved support for compliance and follow-through.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case-top"><span class="case-label">Training & Knowledge Sharing</span></div>
+            <div class="case-body">
+              <h3>Supporting New Advisor Readiness</h3>
+              <h4>Situation</h4>
+              <p>New advisors needed to understand multiple systems, policies, and decision paths while beginning high-volume work.</p>
+              <h4>Analysis</h4>
+              <p>I identified frequent learning gaps and the areas where examples, explanations, and system context were most useful.</p>
+              <h4>Action</h4>
+              <p>I explained processes, answered questions, shared practical examples, and reinforced the importance of complete research and documentation.</p>
+              <div class="case-result">
+                <div class="result-box"><strong>Result:</strong> Stronger confidence, improved knowledge transfer, and more consistent preparation for independent case handling.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case-top"><span class="case-label">Healthcare Operations</span></div>
+            <div class="case-body">
+              <h3>Balancing Accuracy in a High-Volume Clinic</h3>
+              <h4>Situation</h4>
+              <p>A busy medical office required rapid coordination of schedules, insurance, records, payments, and patient communication.</p>
+              <h4>Analysis</h4>
+              <p>I prioritized time-sensitive needs while tracking documentation and communication requirements that affected the patient and provider workflow.</p>
+              <h4>Action</h4>
+              <p>I maintained organized records, coordinated appointments and verification, and communicated clearly across patients and clinical staff.</p>
+              <div class="case-result">
+                <div class="result-box"><strong>Result:</strong> Reliable front-office support, accurate documentation, and smoother coordination in a fast-paced environment.</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper">
+      <div class="wrap">
+        <div class="section-kicker reveal">My Approach</div>
+        <h2 class="reveal">A repeatable process for complex work.</h2>
+        <div class="process">
+          <div class="process-step reveal"><b>Research</b><span>Understand the problem, context, requirements, and available information.</span></div>
+          <div class="process-step reveal"><b>Analyze</b><span>Connect data, systems, policies, documentation, and root causes.</span></div>
+          <div class="process-step reveal"><b>Collaborate</b><span>Engage the right stakeholders and communicate findings clearly.</span></div>
+          <div class="process-step reveal"><b>Improve</b><span>Develop practical solutions that strengthen the process going forward.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="learning" class="soft">
+      <div class="wrap">
+        <div class="section-kicker reveal">Education & Professional Credentials</div>
+        <h2 class="reveal">Building at the intersection of operations, technology, product, and data.</h2>
+        <p class="section-lead reveal">
+          My professional development is intentionally focused on the skills that help teams define problems,
+          coordinate work, use data effectively, adopt AI responsibly, and deliver better operational and customer outcomes.
+        </p>
+
+        <div class="two-col">
+          <article class="card credential-card reveal">
+            <h3>M.S. in Information Technology — Product Management</h3>
+            <div class="credential-meta">Western Governors University • In Progress</div>
+            <p>Graduate study focused on technology, product strategy, stakeholder needs, business value, and the management of technology-enabled solutions.</p>
+          </article>
+          <article class="card credential-card reveal">
+            <h3>B.S. in Laboratory Management</h3>
+            <div class="credential-meta">University of Maryland Global Campus • May 2023</div>
+            <p>Academic foundation combining science, organizational operations, quality awareness, and management.</p>
+          </article>
+        </div>
+
+        <div class="skill-grid" style="margin-top:20px">
+          <article class="card credential-card reveal">
+            <h3>Google AI Professional Certificate</h3>
+            <div class="credential-meta">Google • Earned August 2026</div>
+            <p>Practical application of generative AI for research, productivity, problem solving, communication, and professional workflows with responsible human review.</p>
+          </article>
+          <article class="card credential-card reveal">
+            <h3>Google Project Management Professional Certificate</h3>
+            <div class="credential-meta">Google • Completed 2026</div>
+            <p>Project planning, Agile and Scrum, stakeholder management, risk, documentation, scheduling, communication, and cross-functional execution.</p>
+          </article>
+          <article class="card credential-card reveal">
+            <h3>Microsoft Power BI Data Analyst Professional Certificate</h3>
+            <div class="credential-meta">Microsoft • In Progress</div>
+            <p>Developing skills in data preparation, modeling, visualization, reporting, Power BI, and translating business data into useful insights.</p>
+          </article>
+        </div>
+
+        <div class="skill-grid" style="margin-top:20px">
+          <article class="card reveal">
+            <h3>Enterprise & Business Systems</h3>
+            <div class="tags">
+              <span class="tag">Salesforce</span><span class="tag">Workday</span><span class="tag">PeopleSoft</span>
+              <span class="tag">OnBase</span><span class="tag">Verint</span><span class="tag">Five9</span>
+            </div>
+          </article>
+          <article class="card reveal">
+            <h3>Project, Product & Process</h3>
+            <div class="tags">
+              <span class="tag">Project Coordination</span><span class="tag">Agile</span><span class="tag">Scrum</span>
+              <span class="tag">Stakeholder Management</span><span class="tag">Process Improvement</span>
+              <span class="tag">Requirements Analysis</span><span class="tag">Workflow Optimization</span>
+            </div>
+          </article>
+          <article class="card reveal">
+            <h3>Data, AI & Productivity</h3>
+            <div class="tags">
+              <span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Data Analysis</span>
+              <span class="tag">Data Visualization</span><span class="tag">Generative AI</span>
+              <span class="tag">Microsoft 365</span><span class="tag">SharePoint</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper">
+      <div class="wrap">
+        <div class="section-kicker reveal">Target Opportunities</div>
+        <h2 class="reveal">Where my experience creates the strongest value.</h2>
+        <div class="targets">
+          <div class="target reveal">Business & Customer Operations</div>
+          <div class="target reveal">Project & Program Management</div>
+          <div class="target reveal">Product Operations & Associate Product Roles</div>
+          <div class="target reveal">Business Analysis & Business Systems</div>
+          <div class="target reveal">Process Improvement & Enablement</div>
+          <div class="target reveal">Data-Informed Operations & BI</div>
+        </div>
+      </div>
+    </section>
+
+        <section class="paper">
+      <div class="wrap">
+        <div class="section-kicker reveal">Next Opportunity</div>
+        <h2 class="reveal">Ready to help a team scale smarter.</h2>
+        <p class="section-lead reveal">
+          I am especially interested in growth-oriented roles where I can combine operations knowledge, project delivery,
+          product thinking, business analysis, AI-enabled process improvement, and analytics to improve how teams work.
+        </p>
+        <div class="project-tags reveal">
+          <span>Product Operations</span><span>Project Management</span><span>Program Coordination</span>
+          <span>Business Analysis</span><span>Implementation</span><span>AI Operations</span><span>Process Improvement</span>
+        </div>
+      </div>
+    </section>
+
+<section id="contact" class="paper">
+      <div class="wrap">
+        <div class="cta reveal">
+          <div>
+            <div class="section-kicker" style="color:#cdbeb4">Let's Connect</div>
+            <h2>Ready to improve how teams, systems, and information work together.</h2>
+            <p>
+              I am interested in growth-oriented opportunities across business operations, project and program management,
+              product operations, business analysis, process improvement, customer operations, and data-informed decision support.
+            </p>
+            <div class="contact-list">
+              <span>hydimaqousi21@gmail.com</span>
+              <span>321-263-1073</span>
+              <span>Greater New Orleans, LA</span>
+              <span>Remote opportunities preferred</span>
+            </div>
+          </div>
+          <div class="buttons">
+            <a class="btn btn-light" href="mailto:hydimaqousi21@gmail.com?subject=Professional%20Opportunity%20for%20Hydi%20Maqousi">Email Me</a>
+            <a class="btn btn-light" href="Hydi_Maqousi_Resume.pdf" download>Download Resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="logo-mark" style="margin:0 auto 14px">HM</div>
+      Turning complex operations into scalable systems. © Hydi Maqousi
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('topNav');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+      document.body.classList.toggle('menu-open', isOpen);
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
